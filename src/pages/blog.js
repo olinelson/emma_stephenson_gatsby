@@ -1,9 +1,9 @@
 import React from 'react'
 import { Link, useStaticQuery, graphql, navigate } from 'gatsby'
-import { List, Avatar, Tag, PageHeader } from 'antd'
+import { List, Tag } from 'antd'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
-import { Jumbotron, Container } from '../components/MyStyledComponents'
+import { Container } from '../components/MyStyledComponents'
 
 const Blog = () => {
   const data = useStaticQuery(graphql`query {
@@ -44,7 +44,7 @@ const Blog = () => {
       </Container>
 
     </Layout>
-  </>
+         </>
 }
 
 export default Blog

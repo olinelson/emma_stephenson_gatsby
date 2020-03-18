@@ -1,11 +1,8 @@
 import React from 'react'
-import { Link } from 'gatsby'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
-import { Container, Jumbotron } from '../components/MyStyledComponents'
-import { PageHeader } from 'antd'
-import styled from 'styled-components'
+import { Container } from '../components/MyStyledComponents'
 
 const Linksquid = () => (
   <>

@@ -1,9 +1,8 @@
 import React from 'react'
-import { Link } from 'gatsby'
-import { PageHeader } from 'antd'
+
 import Layout from '../components/layout'
 import SEO from '../components/seo'
-import { Jumbotron, Container } from '../components/MyStyledComponents'
+import { Container } from '../components/MyStyledComponents'
 import ApplePodcasts from '../Icons/ApplePodcasts'
 import SoundCloud from '../Icons/SoundCloud'
 import YoutubeIcon from '../Icons/YoutubeIcon'
@@ -34,7 +33,7 @@ function Podcast () {
       </Container>
 
     </Layout>
-         </>
+  </>
 }
 
 export default Podcast

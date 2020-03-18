@@ -1,25 +1,13 @@
 import React from 'react'
-import { Link, useStaticQuery, graphql } from 'gatsby'
+import { useStaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
-import { Button, Card, Collapse, PageHeader, Divider } from 'antd'
-import Layout from '../components/layout'
-import Image from '../components/image'
-import SEO from '../components/seo'
-import styled, { withTheme } from 'styled-components'
 
-import { Jumbotron } from '../components/MyStyledComponents'
+import Layout from '../components/layout'
+
+import SEO from '../components/seo'
+import styled from 'styled-components'
 
 import Album from '../components/Album'
-
-import { CaretRightOutlined, MenuFoldOutlined } from '@ant-design/icons'
-import SpotifyIcon from '../Icons/SpotifyIcon'
-import AppleMusicIcon from '../Icons/AppleMusicIcon'
-import AmazonIcon from '../Icons/AmazonIcon'
-import GoogleIcon from '../Icons/GoogleIcon'
-import LinkSquidIcon from '../Icons/LinkSquidIcon'
-
-const { Panel } = Collapse
-const { Meta } = Card
 
 function IndexPage () {
   const data = useStaticQuery(graphql`
@@ -59,7 +47,7 @@ function IndexPage () {
   const AlbumContainer = styled.div`
       display: grid;
       padding: 1rem;
-      grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
       grid-gap: 2rem;
       margin: 4rem auto;
        max-width: 80rem;

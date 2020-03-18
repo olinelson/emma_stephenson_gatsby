@@ -1,7 +1,6 @@
 import React from 'react'
-import { Button, Card, Collapse } from 'antd'
+import { Card, Collapse } from 'antd'
 import Img from 'gatsby-image'
-import { CaretRightOutlined } from '@ant-design/icons'
 import SpotifyIcon from '../Icons/SpotifyIcon'
 import AppleMusicIcon from '../Icons/AppleMusicIcon'
 import AmazonIcon from '../Icons/AmazonIcon'
@@ -50,7 +49,7 @@ const IconLink = styled.a`
 function Album ({ imagePath, title, spotifyLink, appleMusicLink, amazonLink, googleLink, linkSquidLink, subtitle, description, showCollapse }) {
   return (
     <Card
-      // style={{ width: '90vw', maxWidth: '40rem', height: 'auto', margin: '1rem 0' }}
+      style={{ width: '100%' }}
       cover={
         <Img
           fluid={imagePath}
@@ -76,7 +75,7 @@ function Album ({ imagePath, title, spotifyLink, appleMusicLink, amazonLink, goo
                 <Panel style={{ border: 'none', margin: '.5rem 0' }} header={subtitle} key='1'>
                   {description}
                 </Panel>
-                </Collapse>
+              </Collapse>
               : subtitle}
 
           </>

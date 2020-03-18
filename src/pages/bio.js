@@ -1,13 +1,11 @@
 import React from 'react'
-import { Link, useStaticQuery, graphql } from 'gatsby'
+import { useStaticQuery, graphql } from 'gatsby'
 
 import Img from 'gatsby-image'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import { Container } from '../components/MyStyledComponents'
-import { PageHeader } from 'antd'
-import styled from 'styled-components'
 
 const Bio = () => {
   const data = useStaticQuery(graphql`
@@ -23,11 +21,6 @@ const Bio = () => {
      
     }
   `)
-
-  const TwoColumnGrid = styled.div`
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-  `
 
   return <>
     <SEO title='Bio' />
@@ -63,7 +56,7 @@ const Bio = () => {
       </Container>
 
     </Layout>
-  </>
+         </>
 }
 
 export default Bio

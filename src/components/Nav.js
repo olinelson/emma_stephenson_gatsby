@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
 import { Menu, Drawer, Button } from 'antd'
 import {
-  MenuOutlined,
-  MenuFoldOutlined,
   MenuUnfoldOutlined
 
 } from '@ant-design/icons'
@@ -60,7 +58,7 @@ function Nav () {
       </Menu>
     </Drawer>
 
-  </>
+         </>
 }
 
 export default Nav

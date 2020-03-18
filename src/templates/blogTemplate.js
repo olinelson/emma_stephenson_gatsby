@@ -1,5 +1,5 @@
 import React from 'react'
-import { graphql, useStaticQuery, navigate } from 'gatsby'
+import { graphql, navigate } from 'gatsby'
 import Layout from '../components/layout'
 import { Container } from '../components/MyStyledComponents'
 import Img from 'gatsby-image'

@@ -1,13 +1,13 @@
 /* global Stripe */
 import React, { useState, useEffect } from 'react'
-import { Link, useStaticQuery, graphql } from 'gatsby'
+import { useStaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import styled from 'styled-components'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
-import { Jumbotron, Container } from '../components/MyStyledComponents'
-import { PageHeader, Carousel, Radio, Button, Card, Divider, Drawer } from 'antd'
+import { Container } from '../components/MyStyledComponents'
+import { Carousel, Button, Card, Drawer } from 'antd'
 
 const { Meta } = Card
 
