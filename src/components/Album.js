@@ -32,8 +32,8 @@ function Album ({ imagePath, title, spotifyLink, appleMusicLink, amazonLink, goo
     //   fluid={data.file.childImageSharp.fluid}
       fluid={imagePath}
       alt='Transcribr Logo'
-           />}
-  >
+    />}
+         >
 
     <Meta
       title={title}
@@ -52,14 +52,14 @@ function Album ({ imagePath, title, spotifyLink, appleMusicLink, amazonLink, goo
               <Panel style={{ border: 'none', margin: '.5rem 0' }} header={subtitle} key='1'>
                 {description}
               </Panel>
-            </Collapse>
+              </Collapse>
             : subtitle}
 
         </>
       }
     />
 
-         </Card>
+  </Card>
 }
 
 export default Album

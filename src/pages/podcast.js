@@ -24,10 +24,9 @@ function Podcast () {
       <PageHeader
         style={{ marginLeft: '2rem' }}
 
-        title='Bio'
+        title='Podcast'
       />
       <Container>
-        <h1>Podcast</h1>
 
         <h4>Stuff You Can’t Say with Jazz Piano.</h4>
 
@@ -39,7 +38,7 @@ function Podcast () {
       </Container>
 
     </Layout>
-         </>
+  </>
 }
 
 export default Podcast
