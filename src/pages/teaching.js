@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+/* global Stripe */
+import React, { useState, useEffect } from 'react'
 import { Link, useStaticQuery } from 'gatsby'
 import Img from 'gatsby-image'
 import styled from 'styled-components'
@@ -11,6 +12,34 @@ import { PageHeader, Carousel, Radio, Button, Card, Divider, Drawer } from 'antd
 const { Meta } = Card
 
 const Teaching = () => {
+  useEffect(() => {
+    const script = document.createElement('script')
+
+    script.src = 'https://js.stripe.com/v3'
+    script.async = true
+
+    document.body.appendChild(script)
+  }, [])
+
+  const onCheckout = () => {
+    const stripe = Stripe('pk_test_dFVuzatZp76wOfS5ylB1ksF000wXhysIRM')
+
+    stripe.redirectToCheckout({
+      items: [{ sku: 'sku_GvoQ9BUcwbW5Pb', quantity: 1 }],
+      shippingAddressCollection: {
+        allowedCountries: ['US', 'CA', 'AU', 'NZ']
+      },
+      successUrl: 'https://your-website.com/success',
+      cancelUrl: 'https://your-website.com/canceled'
+    })
+      .then(function (result) {
+        if (result.error) {
+          var displayError = document.getElementById('error-message')
+          displayError.textContent = result.error.message
+        }
+      })
+  }
+
   const [teachingDrawerOpen, setTeachingDrawerOpen] = useState(false)
 
   const data = useStaticQuery(graphql`
@@ -122,7 +151,7 @@ const Teaching = () => {
         </Card>
 
         <Card
-
+          onClick={() => onCheckout()}
           hoverable
           // style={{ width: 300 }}
           cover={<img alt='example' src='https://i.ytimg.com/vi/Kt_JePg86b8/maxresdefault.jpg' />}
