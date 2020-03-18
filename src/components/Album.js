@@ -14,10 +14,32 @@ const { Meta } = Card
 
 const MusicIconContainer = styled.div`
     display: grid;
-    grid-template-columns: repeat(5,1.5rem);
+    grid-template-columns: repeat(5, 2rem);
     grid-gap: 1rem;
 
     align-items: center;
+    a{
+      font-size: 2rem;
+      color: inherit;
+    }
+    a:link {
+  color: inherit;
+}
+
+/* visited link */
+a:visited {
+  color: inherit;
+}
+
+/* mouse over link */
+a:hover {
+  color: inherit;
+}
+
+/* selected link */
+a:active {
+  color: inherit;
+}
 `
 
 const IconLink = styled.a`

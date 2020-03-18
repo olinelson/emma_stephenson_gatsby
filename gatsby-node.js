@@ -12,6 +12,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
           node {
             frontmatter {
               path
+              featureImage
             }
           }
         }
@@ -27,7 +28,7 @@ exports.createPages = async ({ actions, graphql, reporter }) => {
     createPage({
       path: node.frontmatter.path,
       component: blogPostTemplate,
-      context: {} // additional data can be passed via context
+      context: { featureImage: node.frontmatter.featureImage } // additional data can be passed via context
     })
   })
 }

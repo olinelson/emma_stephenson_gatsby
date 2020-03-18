@@ -1,6 +1,6 @@
 /* global Stripe */
 import React, { useState, useEffect } from 'react'
-import { Link, useStaticQuery } from 'gatsby'
+import { Link, useStaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 import styled from 'styled-components'
 
@@ -22,6 +22,7 @@ const Teaching = () => {
   }, [])
 
   const onCheckout = () => {
+    setCheckoutLoading(true)
     const stripe = Stripe('pk_test_dFVuzatZp76wOfS5ylB1ksF000wXhysIRM')
 
     stripe.redirectToCheckout({
@@ -41,6 +42,8 @@ const Teaching = () => {
   }
 
   const [teachingDrawerOpen, setTeachingDrawerOpen] = useState(false)
+  const [starterKitDrawerOpen, setStarterKitDrawerOpen] = useState(false)
+  const [checkoutLoading, setCheckoutLoading] = useState(false)
 
   const data = useStaticQuery(graphql`
     query {
@@ -76,6 +79,13 @@ const Teaching = () => {
       teaching5: file(relativePath: { eq: "images/teaching5.jpg" }) {
         childImageSharp {
           fluid(maxWidth:400, maxHeight: 250) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      teaching6: file(relativePath: { eq: "images/teaching6.jpg" }) {
+        childImageSharp {
+          fluid {
             ...GatsbyImageSharpFluid
           }
         }
@@ -151,9 +161,9 @@ const Teaching = () => {
         </Card>
 
         <Card
-          onClick={() => onCheckout()}
+          onClick={() => setStarterKitDrawerOpen(true)}
           hoverable
-          // style={{ width: 300 }}
+
           cover={<img alt='example' src='https://i.ytimg.com/vi/Kt_JePg86b8/maxresdefault.jpg' />}
         >
           <Meta title='Piano w Miss Emma Starter Kit' description='a really good thing...' />
@@ -162,9 +172,9 @@ const Teaching = () => {
         <Card
           onClick={() => setTeachingDrawerOpen(true)}
           hoverable
-          cover={<img alt='example' src='https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.2s_cxWlm9DoJcddNBvOjMQHaEA%26pid%3DApi&f=1' />}
+          cover={<Img fluid={data.teaching6.childImageSharp.fluid} />}
         >
-          <Meta title='Lessons' description='A piano channel focused on blah blah ' />
+          <Meta title='Lessons' description='I teach lessons from my home....' />
         </Card>
 
       </CardContainer>
@@ -230,7 +240,18 @@ Please email me at <a href='mailto:emmagrace91@gmail.com'>emmagrace91@gmail.com<
 
     </Drawer>
 
-  </>
+    <Drawer onClose={() => setStarterKitDrawerOpen(false)} visible={starterKitDrawerOpen}>
+      <h1>Starter Kit</h1>
+
+      <p>The starter kit is really really good and you should buy it</p>
+
+      <Button loading={checkoutLoading} onClick={() => onCheckout()}>
+        Buy
+      </Button>
+
+    </Drawer>
+
+         </>
 }
 
 export default Teaching
