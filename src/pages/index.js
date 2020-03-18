@@ -47,7 +47,7 @@ function IndexPage () {
   const AlbumContainer = styled.div`
       display: grid;
       padding: 1rem;
-      grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
       grid-gap: 2rem;
       margin: 4rem auto;
        max-width: 80rem;
@@ -65,7 +65,7 @@ function IndexPage () {
           fluid={data.headshot.childImageSharp.fluid}
           alt='Emma Stephenson'
           // imgStyle={{ maxHeight: '100vh' }}
-          style={{ margin: 'auto 15vw auto auto', maxHeight: '100vh', maxWidth: '80vh' }}
+          style={{ margin: 'auto 15vw auto auto', maxHeight: '100vh', maxWidth: '80vh', width: '100%' }}
         // style={{ border: '1px solid red', background: 'black' }}
         />
       </div>

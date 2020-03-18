@@ -12,7 +12,7 @@ function Nav () {
   const currentPage = isBrowser() ? [window.location.pathname] : ['/']
 
   return <>
-    <Button style={{ position: 'fixed', top: '1rem', left: '1rem', zIndex: '150' }} onClick={() => setDrawerOpen(true)} icon={<MenuUnfoldOutlined />} />
+    <Button size='large' style={{ position: 'fixed', top: '1rem', left: '1rem', zIndex: '150' }} onClick={() => setDrawerOpen(true)} icon={<MenuUnfoldOutlined />} />
     {/* <MenuOutlined /> */}
     <Drawer
       placement='left'
