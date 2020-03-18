@@ -24,13 +24,11 @@ const Blog = () => {
 
   return <>
     <SEO title='Blog' />
-    <PageHeader
-      style={{ marginLeft: '2rem' }}
 
-      title='Blog'
-    />
     <Layout>
+
       <Container>
+        <h1>Blog</h1>
         <List
           itemLayout='horizontal'
           dataSource={data.posts.nodes}

@@ -56,9 +56,21 @@ function IndexPage () {
     }
   `)
 
+  const AlbumContainer = styled.div`
+      display: grid;
+      padding: 1rem;
+      grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+      grid-gap: 2rem;
+      margin: 4rem auto;
+       max-width: 80rem;
+    width: 100vw;
+
+
+    `
+
   return (
     <Layout>
-      <SEO title='Home' />
+      <SEO title='Music' />
       <div style={{ background: 'black' }}>
         <h1 style={{ zIndex: '100', position: 'absolute', top: 'min(80vw, 70vh)', fontSize: '10vw', left: '1rem' }}>Emma Stephenson</h1>
         <Img
@@ -70,16 +82,16 @@ function IndexPage () {
         />
       </div>
 
-      <PageHeader
+      {/* <PageHeader
         style={{ marginLeft: '2rem' }}
         className='site-page-header'
         // onBack={() => null}
         title='Music'
         // subTitle='Emma Stephenson'
         backIcon={<MenuFoldOutlined />}
-      />
+      /> */}
 
-      <Jumbotron>
+      <AlbumContainer>
 
         <Album
           imagePath={data.iWroteYouASong.childImageSharp.fluid}
@@ -124,7 +136,7 @@ function IndexPage () {
           showCollapse={false}
 
         />
-      </Jumbotron>
+      </AlbumContainer>
 
     </Layout>
   )

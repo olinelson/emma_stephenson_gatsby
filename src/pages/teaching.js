@@ -5,7 +5,7 @@ import styled from 'styled-components'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
-import { Jumbotron } from '../components/MyStyledComponents'
+import { Jumbotron, Container } from '../components/MyStyledComponents'
 import { PageHeader, Carousel, Radio, Button, Card, Divider, Drawer } from 'antd'
 
 const { Meta } = Card
@@ -51,6 +51,13 @@ const Teaching = () => {
           }
         }
       }
+      pianoWithMissEmma: file(relativePath: { eq: "images/pianoWithMissEmma.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth:400, maxHeight: 400) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
 
      
 
@@ -73,35 +80,33 @@ const Teaching = () => {
   return <>
     <SEO title='Teaching' />
     <Layout>
-      <PageHeader
-        style={{ marginLeft: '2rem' }}
+      <Container>
+        <h1>Teaching</h1>
 
-        title='Teaching'
-      />
+        <Carousel dots autoplay style={{ width: '100vw', maxWidth: 'min(50rem, 100vw)', padding: '0 1rem' }}>
 
-      <Carousel dots autoplay style={{ width: '100vw', maxWidth: 'min(50rem, 100vw)', padding: '0 1rem', margin: 'auto' }}>
+          <Img
+            fluid={data.teaching1.childImageSharp.fluid}
+          />
 
-        <Img
-          fluid={data.teaching1.childImageSharp.fluid}
-        />
+          <Img
+            fluid={data.teaching2.childImageSharp.fluid}
+          />
 
-        <Img
-          fluid={data.teaching2.childImageSharp.fluid}
-        />
+          <Img
+            fluid={data.teaching3.childImageSharp.fluid}
+          />
 
-        <Img
-          fluid={data.teaching3.childImageSharp.fluid}
-        />
+          <Img
+            fluid={data.teaching4.childImageSharp.fluid}
+          />
 
-        <Img
-          fluid={data.teaching4.childImageSharp.fluid}
-        />
+          <Img
+            fluid={data.teaching5.childImageSharp.fluid}
+          />
 
-        <Img
-          fluid={data.teaching5.childImageSharp.fluid}
-        />
-
-      </Carousel>
+        </Carousel>
+      </Container>
 
       {/* <Jumbotron /> */}
 
@@ -111,7 +116,7 @@ const Teaching = () => {
 
           hoverable
           // style={{ width: 300 }}
-          cover={<img alt='example' src='http://marketingland.com/wp-content/ml-loads/2014/08/youtube-logo-1920.jpg' />}
+          cover={<Img fluid={data.pianoWithMissEmma.childImageSharp.fluid} />}
         >
           <Meta title='Piano With Miss Emma' description='A piano channel focused on blah blah ' />
         </Card>
@@ -196,7 +201,7 @@ Please email me at <a href='mailto:emmagrace91@gmail.com'>emmagrace91@gmail.com<
 
     </Drawer>
 
-         </>
+  </>
 }
 
 export default Teaching

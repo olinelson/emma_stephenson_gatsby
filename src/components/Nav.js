@@ -2,7 +2,9 @@ import React, { useState } from 'react'
 import { Menu, Drawer, Button } from 'antd'
 import {
   MenuOutlined,
-  MenuFoldOutlined
+  MenuFoldOutlined,
+  MenuUnfoldOutlined
+
 } from '@ant-design/icons'
 import { Link } from 'gatsby'
 import { isBrowser } from '../utils'
@@ -14,7 +16,7 @@ function Nav () {
   const currentPage = isBrowser() ? [window.location.pathname] : ['/']
 
   return <>
-    <Button style={{ position: 'fixed', top: '1rem', left: '1rem', zIndex: '150' }} onClick={() => setDrawerOpen(true)} icon={<MenuFoldOutlined />} />
+    <Button style={{ position: 'fixed', top: '1rem', left: '1rem', zIndex: '150' }} onClick={() => setDrawerOpen(true)} icon={<MenuUnfoldOutlined />} />
     {/* <MenuOutlined /> */}
     <Drawer
       placement='left'
@@ -33,9 +35,9 @@ function Nav () {
           <Link to='/teaching'>Teaching</Link>
         </Menu.Item>
 
-        <Menu.Item key='/research'>
+        {/* <Menu.Item key='/research'>
           <Link to='/research'>Research</Link>
-        </Menu.Item>
+        </Menu.Item> */}
 
         <Menu.Item key='/linksquid'>
           <Link to='/linksquid'>Linksquid</Link>
@@ -60,7 +62,7 @@ function Nav () {
       </Menu>
     </Drawer>
 
-  </>
+         </>
 }
 
 export default Nav

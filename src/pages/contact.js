@@ -9,12 +9,9 @@ const Contact = () => (
   <>
     <SEO title='Contact' />
     <Layout>
-      <PageHeader
-        style={{ marginLeft: '2rem' }}
 
-        title='Blog'
-      />
       <Container>
+        <h1>Contact</h1>
         <p>Please send all enquiries to <a href='mailto:emmagrace91@gmail.com'>emmagrace91@gmail.com</a></p>
       </Container>
 

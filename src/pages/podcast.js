@@ -21,14 +21,10 @@ function Podcast () {
   return <>
     <SEO title='Podcast' />
     <Layout>
-      <PageHeader
-        style={{ marginLeft: '2rem' }}
 
-        title='Podcast'
-      />
       <Container>
-
-        <h4>Stuff You Can’t Say with Jazz Piano.</h4>
+        <h1>Podcast</h1>
+        <h2>Stuff You Can’t Say with Jazz Piano.</h2>
 
         <IconContainer>
           <ApplePodcasts />
@@ -38,7 +34,7 @@ function Podcast () {
       </Container>
 
     </Layout>
-  </>
+         </>
 }
 
 export default Podcast

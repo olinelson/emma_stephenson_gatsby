@@ -26,40 +26,43 @@ const IconLink = styled.a`
 `
 
 function Album ({ imagePath, title, spotifyLink, appleMusicLink, amazonLink, googleLink, linkSquidLink, subtitle, description, showCollapse }) {
-  return <Card
-    style={{ width: '90vw', maxWidth: '40rem', height: 'auto', margin: '1rem 0' }}
-    cover={<Img
-    //   fluid={data.file.childImageSharp.fluid}
-      fluid={imagePath}
-      alt='Transcribr Logo'
-    />}
-         >
-
-    <Meta
-      title={title}
-      description={
-        <>
-          <MusicIconContainer>
-            <IconLink href={spotifyLink}><SpotifyIcon /> </IconLink>
-            <IconLink href={appleMusicLink}><AppleMusicIcon /> </IconLink>
-            <IconLink href={amazonLink}><AmazonIcon /> </IconLink>
-            <IconLink href={googleLink}><GoogleIcon /> </IconLink>
-            <IconLink href={linkSquidLink}><LinkSquidIcon /> </IconLink>
-          </MusicIconContainer>
-
-          {showCollapse
-            ? <Collapse bordered={false}>
-              <Panel style={{ border: 'none', margin: '.5rem 0' }} header={subtitle} key='1'>
-                {description}
-              </Panel>
-              </Collapse>
-            : subtitle}
-
-        </>
+  return (
+    <Card
+      // style={{ width: '90vw', maxWidth: '40rem', height: 'auto', margin: '1rem 0' }}
+      cover={
+        <Img
+          fluid={imagePath}
+          alt='Transcribr Logo'
+        />
       }
-    />
+    >
 
-  </Card>
+      <Meta
+        title={title}
+        description={
+          <>
+            <MusicIconContainer>
+              <IconLink href={spotifyLink}><SpotifyIcon /> </IconLink>
+              <IconLink href={appleMusicLink}><AppleMusicIcon /> </IconLink>
+              <IconLink href={amazonLink}><AmazonIcon /> </IconLink>
+              <IconLink href={googleLink}><GoogleIcon /> </IconLink>
+              <IconLink href={linkSquidLink}><LinkSquidIcon /> </IconLink>
+            </MusicIconContainer>
+
+            {showCollapse
+              ? <Collapse bordered={false}>
+                <Panel style={{ border: 'none', margin: '.5rem 0' }} header={subtitle} key='1'>
+                  {description}
+                </Panel>
+                </Collapse>
+              : subtitle}
+
+          </>
+        }
+      />
+
+    </Card>
+  )
 }
 
 export default Album

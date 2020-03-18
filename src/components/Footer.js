@@ -16,7 +16,7 @@ export default function Footer () {
     <FooterContainer>
       {/* <p>Footer</p> */}
 
-      <p style={{ margin: '1rem' }}>footer</p>
+      {/* <p style={{ margin: '1rem' }}>footer</p> */}
 
     </FooterContainer>
   )

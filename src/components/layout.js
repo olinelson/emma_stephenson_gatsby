@@ -13,6 +13,7 @@ import Footer from './Footer'
 import styled from 'styled-components'
 
 const ContentContainer = styled.div`
+ 
 `
 
 const SiteContainer = styled.div`

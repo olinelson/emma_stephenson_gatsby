@@ -9,7 +9,10 @@ export const Jumbotron = styled.div`
 `
 
 export const Container = styled.div`
-  margin: auto;
+  margin: 2rem auto;
   max-width: 50rem;
   padding: 1rem;
+  h1{
+    font-size: 3rem;
+  }
 `
