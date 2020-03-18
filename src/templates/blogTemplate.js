@@ -11,8 +11,6 @@ function Template ({
   const { markdownRemark, featureImageQuery } = data // data.markdownRemark holds your post data
   const { frontmatter, html } = markdownRemark
 
-  console.log('this is it', data)
-
   return (
     <Layout>
       <Img style={{ maxHeight: '40vh' }} fluid={featureImageQuery.childImageSharp.fluid} />

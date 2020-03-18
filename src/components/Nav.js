@@ -11,8 +11,6 @@ import { isBrowser } from '../utils'
 
 function Nav () {
   const [drawerOpen, setDrawerOpen] = useState(false)
-
-  console.log(window.location.pathname)
   const currentPage = isBrowser() ? [window.location.pathname] : ['/']
 
   return <>
@@ -62,7 +60,7 @@ function Nav () {
       </Menu>
     </Drawer>
 
-         </>
+  </>
 }
 
 export default Nav

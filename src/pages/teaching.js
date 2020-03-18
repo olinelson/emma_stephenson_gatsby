@@ -114,8 +114,6 @@ const Teaching = () => {
     width: 100vw;
   `
 
-  console.log()
-
   return <>
     <SEO title='Teaching' />
     <Layout>
@@ -251,7 +249,7 @@ Please email me at <a href='mailto:emmagrace91@gmail.com'>emmagrace91@gmail.com<
 
     </Drawer>
 
-         </>
+  </>
 }
 
 export default Teaching

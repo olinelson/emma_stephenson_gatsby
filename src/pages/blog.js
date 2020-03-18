@@ -20,8 +20,6 @@ const Blog = () => {
   }
 }`)
 
-  console.log(data.posts)
-
   return <>
     <SEO title='Blog' />
 
@@ -46,7 +44,7 @@ const Blog = () => {
       </Container>
 
     </Layout>
-         </>
+  </>
 }
 
 export default Blog
