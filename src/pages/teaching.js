@@ -120,7 +120,7 @@ const Teaching = () => {
       <Container>
         <h1>Teaching</h1>
 
-        <Carousel dots autoplay style={{ width: '100vw', maxWidth: 'min(50rem, 100vw)', padding: '0 1rem' }}>
+        <Carousel dots autoplay style={{ width: '100%' }}>
 
           <Img
             fluid={data.teaching1.childImageSharp.fluid}
