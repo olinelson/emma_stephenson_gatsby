@@ -48,16 +48,16 @@ const IconLink = styled.a`
 
 function Album ({ imagePath, title, spotifyLink, appleMusicLink, amazonLink, googleLink, linkSquidLink, subtitle, description, showCollapse }) {
   return (
-    <div
-      style={{ width: '100%', maxWidth: '30rem'  }}
-
+    <Card
+      style={{ width: '100%', maxWidth: '30rem', justifySelf: 'center' }}
+      cover={
+        <Img
+          fluid={imagePath}
+          alt='Transcribr Logo'
+          style={{ maxWidth: '30rem' }}
+        />
+      }
     >
-
-      <Img
-        fluid={imagePath}
-        alt='Transcribr Logo'
-        style={{ maxWidth: '30rem' }}
-      />
 
       <Meta
         title={title}
@@ -68,7 +68,7 @@ function Album ({ imagePath, title, spotifyLink, appleMusicLink, amazonLink, goo
               <IconLink href={appleMusicLink}><AppleMusicIcon /> </IconLink>
               <IconLink href={amazonLink}><AmazonIcon /> </IconLink>
               <IconLink href={googleLink}><GoogleIcon /> </IconLink>
-              <IconLink href={linkSquidLink}><LinkSquidIcon /> </IconLink>
+              {/* <IconLink href={linkSquidLink}><LinkSquidIcon /> </IconLink> */}
             </MusicIconContainer>
 
             {showCollapse
@@ -83,7 +83,7 @@ function Album ({ imagePath, title, spotifyLink, appleMusicLink, amazonLink, goo
         }
       />
 
-    </div>
+    </Card>
   )
 }
 
