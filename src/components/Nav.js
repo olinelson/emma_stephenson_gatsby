@@ -17,10 +17,12 @@ function Nav () {
     top: 1rem;
     left: 1rem;
     z-index: 150;
+   
 
   @media (max-width: 600px) {
      top: auto;
     bottom: 1rem;
+    
   }
   `
 
@@ -71,7 +73,7 @@ function Nav () {
       </Menu>
     </Drawer>
 
-         </>
+  </>
 }
 
 export default Nav
