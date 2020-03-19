@@ -27,7 +27,7 @@ function IndexPage () {
           }
         }
       }
-      trashCanDream: file(relativePath: { eq: "images/trashCanDream.jpg" }) {
+      trashCanDreamSquare: file(relativePath: { eq: "images/trashCanDreamSquare.jpg" }) {
         childImageSharp {
           fluid(fit: CONTAIN) {
             ...GatsbyImageSharpFluid
@@ -113,15 +113,22 @@ function IndexPage () {
           title='Where The Rest Of The World Begins'
           subtitle='Studio album featuring Gian Slater on vocals and Hieronymus Trio (Emma Stephenson, Nick Henderson and Oli Nelson)'
           showCollapse={false}
-
+          appleMusicLink='https://geo.music.apple.com/us/album/where-the-rest-of-the-world-begins-feat-gian-slater/1230208237?mt=1&app=music'
+          amazonLink='https://music.amazon.com/albums/B071YMN41Y?ref=dm_sh_9d30-a56e-dmcp-11db-d25ee&musicTerritory=US&marketplaceId=ATVPDKIKX0DER'
+          googleLink='https://play.google.com/store/music/album/Hieronymus_Trio_Where_the_Rest_of_the_World_begins?id=Bgdlqvb355g5enc7xkpy7dok7ki&hl=en_US'
         />
         <Album
-          imagePath={data.trashCanDream.childImageSharp.fluid}
+          imagePath={data.trashCanDreamSquare.childImageSharp.fluid}
           title='Trash Can Dream'
           subtitle='Home brewed demos from husband and wife duo Emma Stephenson and Oli Nelson, recorded in our New York City Apartment in 2018 and 2019. '
           showCollapse={false}
-
+          linkSquidLink='https://www.linksquid.com/feed/73058'
+          spotifyLink='https://open.spotify.com/artist/3LDSoLpkpujvh6w0ilJTUT?si=VaL4jV3rQtCgYfi0W9oIxg'
+          appleMusicLink='https://geo.music.apple.com/us/artist/trash-can-dream/1422156907?mt=1&app=music'
+          amazonLink='https://music.amazon.com/artists/B07G65S2JM?ref=dm_sh_642c-82fb-dmcp-3388-a0a4a&musicTerritory=US&marketplaceId=ATVPDKIKX0DER'
+          googleLink='https://play.google.com/store/music/artist/Trash_Can_Dream?id=Agbjcbipjjf3ummf5ftw6tyu5my&hl=en_US'
         />
+
       </AlbumContainer>
 
     </Layout>

@@ -15,30 +15,13 @@ const MusicIconContainer = styled.div`
     display: grid;
     grid-template-columns: repeat(5, 2rem);
     grid-gap: 1rem;
-
+    margin: 1rem 0;
     align-items: center;
     a{
       font-size: 2rem;
-      color: inherit;
+      // color: inherit;
     }
-    a:link {
-  color: inherit;
-}
 
-/* visited link */
-a:visited {
-  color: inherit;
-}
-
-/* mouse over link */
-a:hover {
-  color: inherit;
-}
-
-/* selected link */
-a:active {
-  color: inherit;
-}
 `
 
 const IconLink = styled.a`
@@ -64,11 +47,26 @@ function Album ({ imagePath, title, spotifyLink, appleMusicLink, amazonLink, goo
         description={
           <>
             <MusicIconContainer>
-              <IconLink href={spotifyLink}><SpotifyIcon /> </IconLink>
-              <IconLink href={appleMusicLink}><AppleMusicIcon /> </IconLink>
-              <IconLink href={amazonLink}><AmazonIcon /> </IconLink>
-              <IconLink href={googleLink}><GoogleIcon /> </IconLink>
-              {/* <IconLink href={linkSquidLink}><LinkSquidIcon /> </IconLink> */}
+              {linkSquidLink
+                ? <IconLink href={linkSquidLink}><LinkSquidIcon /> </IconLink>
+                : null}
+
+              {spotifyLink
+                ? <IconLink href={spotifyLink}><SpotifyIcon /> </IconLink>
+                : null}
+
+              {appleMusicLink
+                ? <IconLink href={appleMusicLink}><AppleMusicIcon /> </IconLink>
+                : null}
+
+              {amazonLink
+                ? <IconLink href={amazonLink}><AmazonIcon /> </IconLink>
+                : null}
+
+              {googleLink
+                ? <IconLink href={googleLink}><GoogleIcon /> </IconLink>
+                : null}
+
             </MusicIconContainer>
 
             {showCollapse
@@ -76,7 +74,7 @@ function Album ({ imagePath, title, spotifyLink, appleMusicLink, amazonLink, goo
                 <Panel style={{ border: 'none', margin: '.5rem 0' }} header={subtitle} key='1'>
                   {description}
                 </Panel>
-                </Collapse>
+              </Collapse>
               : subtitle}
 
           </>

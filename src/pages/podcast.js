@@ -26,9 +26,10 @@ function Podcast () {
         <h2>Stuff You Can’t Say with Jazz Piano.</h2>
 
         <IconContainer>
-          <ApplePodcasts />
-          <SoundCloud />
-          <YoutubeIcon />
+          <a href='https://podcasts.apple.com/us/podcast/stuff-you-cant-say-with-jazz-piano/id1150947491?mt=2&app=podcast'> <ApplePodcasts /></a>
+          <a href='https://soundcloud.com/stuffyoucantsay'><SoundCloud /></a>
+          <a href='https://www.youtube.com/watch?v=q4r0OBDcpxg&list=PL0NMmeLRl9qp76T2Cqdz_bHnAoSsZIWne'><YoutubeIcon /></a>
+
         </IconContainer>
       </Container>
 

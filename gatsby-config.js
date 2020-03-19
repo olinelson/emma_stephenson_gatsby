@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Default Starter',
-    description: 'Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.',
-    author: '@gatsbyjs'
+    title: 'Emma Stephenson',
+    description: 'Australian songwriter, pianist and piano teacher',
+    author: 'olinelson'
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -20,8 +20,8 @@ module.exports = {
       options: {
         javascriptEnabled: true,
         modifyVars: {
-          // 'primary-color': '#BADA55'
-          'font-size-base': '16px'
+          'font-size-base': '16px',
+          'primary-color': '#ea2940'
         }
       }
     },

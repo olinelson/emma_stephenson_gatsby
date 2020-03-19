@@ -6,13 +6,26 @@ import {
 } from '@ant-design/icons'
 import { Link } from 'gatsby'
 import { isBrowser } from '../utils'
+import styled from 'styled-components'
 
 function Nav () {
   const [drawerOpen, setDrawerOpen] = useState(false)
   const currentPage = isBrowser() ? [window.location.pathname] : ['/']
 
+  const MenuButton = styled(Button)`
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    z-index: 150;
+
+  @media (max-width: 600px) {
+     top: auto;
+    bottom: 1rem;
+  }
+  `
+
   return <>
-    <Button size='large' style={{ position: 'fixed', top: '1rem', left: '1rem', zIndex: '150' }} onClick={() => setDrawerOpen(true)} icon={<MenuUnfoldOutlined />} />
+    <MenuButton shape='circle' type='primary' size='large' onClick={() => setDrawerOpen(true)} icon={<MenuUnfoldOutlined />} />
     {/* <MenuOutlined /> */}
     <Drawer
       placement='left'
@@ -58,7 +71,7 @@ function Nav () {
       </Menu>
     </Drawer>
 
-         </>
+  </>
 }
 
 export default Nav
