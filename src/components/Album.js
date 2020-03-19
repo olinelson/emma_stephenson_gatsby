@@ -49,7 +49,7 @@ const IconLink = styled.a`
 function Album ({ imagePath, title, spotifyLink, appleMusicLink, amazonLink, googleLink, linkSquidLink, subtitle, description, showCollapse }) {
   return (
     <div
-      style={{ width: '100%', maxWidth: '30rem', justifySelf: 'center' }}
+      style={{ width: '100%', maxWidth: '30rem'  }}
 
     >
 
@@ -76,7 +76,7 @@ function Album ({ imagePath, title, spotifyLink, appleMusicLink, amazonLink, goo
                 <Panel style={{ border: 'none', margin: '.5rem 0' }} header={subtitle} key='1'>
                   {description}
                 </Panel>
-                </Collapse>
+              </Collapse>
               : subtitle}
 
           </>
