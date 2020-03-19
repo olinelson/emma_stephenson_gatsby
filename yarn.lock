@@ -2230,7 +2230,7 @@ babel-plugin-remove-graphql-queries@^2.7.25:
   resolved "https://registry.yarnpkg.com/babel-plugin-remove-graphql-queries/-/babel-plugin-remove-graphql-queries-2.7.25.tgz#b52decea8af7e06c6ae7c2a307c44ae4a4f5def9"
   integrity sha512-kQZnj1SszxhlOvaNIGA7sw0bcdHyWpLDBy+1MBNYblGes7eUjfUeshzRd5ffJ9WMaKgXz4tyKDzAygjnpPaPZg==
 
-"babel-plugin-styled-components@>= 1":
+"babel-plugin-styled-components@>= 1", babel-plugin-styled-components@^1.10.7:
   version "1.10.7"
   resolved "https://registry.yarnpkg.com/babel-plugin-styled-components/-/babel-plugin-styled-components-1.10.7.tgz#3494e77914e9989b33cc2d7b3b29527a949d635c"
   integrity sha512-MBMHGcIA22996n9hZRf/UJLVVgkEOITuR2SvjHLb5dSTUyR4ZRGn+ngITapes36FI3WLxZHfRhkA1ffHxihOrg==
@@ -5734,6 +5734,13 @@ gatsby-plugin-sharp@^2.4.12:
     sharp "^0.23.4"
     svgo "1.3.2"
     uuid "^3.3.3"
+
+gatsby-plugin-styled-components@^3.1.21:
+  version "3.1.21"
+  resolved "https://registry.yarnpkg.com/gatsby-plugin-styled-components/-/gatsby-plugin-styled-components-3.1.21.tgz#d376464a762ae0acdd1e313e02c002eabc1aa4a6"
+  integrity sha512-uU4MtUAw3zazeVnKnOL0c0+mhtpNfEKee983jyUnAGZnXyXa9EYfZ7Lw+b++FqCce+e6EDlI7VemUR4voSD0DQ==
+  dependencies:
+    "@babel/runtime" "^7.8.7"
 
 gatsby-react-router-scroll@^2.1.23:
   version "2.1.23"

@@ -52,6 +52,8 @@ function IndexPage () {
       margin: 4rem auto;
        max-width: 80rem;
     width: 100vw;
+    border: 3px solid red;
+
 
 
     `
