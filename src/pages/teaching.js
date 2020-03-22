@@ -1,6 +1,6 @@
 /* global Stripe */
 import React, { useState, useEffect } from 'react'
-import { useStaticQuery, graphql } from 'gatsby'
+import { useStaticQuery, graphql, navigate } from 'gatsby'
 import Img from 'gatsby-image'
 import styled from 'styled-components'
 
@@ -76,13 +76,7 @@ const Teaching = () => {
           }
         }
       }
-      teaching5: file(relativePath: { eq: "images/teaching5.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth:400, maxHeight: 250) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
+     
       teaching6: file(relativePath: { eq: "images/teaching6.jpg" }) {
         childImageSharp {
           fluid {
@@ -93,6 +87,13 @@ const Teaching = () => {
       pianoWithMissEmma: file(relativePath: { eq: "images/pianoWithMissEmma.jpg" }) {
         childImageSharp {
           fluid(maxWidth:400, maxHeight: 400) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      kit1: file(relativePath: { eq: "images/kit1.jpg" }) {
+        childImageSharp {
+          fluid {
             ...GatsbyImageSharpFluid
           }
         }
@@ -138,10 +139,6 @@ const Teaching = () => {
             fluid={data.teaching4.childImageSharp.fluid}
           />
 
-          <Img
-            fluid={data.teaching5.childImageSharp.fluid}
-          />
-
         </Carousel>
       </Container>
 
@@ -150,9 +147,11 @@ const Teaching = () => {
       <CardContainer>
 
         <Card
-
+          onClick={() => {
+            window.location = 'https://www.youtube.com/channel/UCJcrv99z4efX0kV0nkCOsnQ?view_as=subscriber'
+            return null
+          }}
           hoverable
-          // style={{ width: 300 }}
           cover={<Img fluid={data.pianoWithMissEmma.childImageSharp.fluid} />}
         >
           <Meta title='Piano With Miss Emma' description='A piano channel focused on blah blah ' />
@@ -238,10 +237,30 @@ Please email me at <a href='mailto:emmagrace91@gmail.com'>emmagrace91@gmail.com<
 
     </Drawer>
 
-    <Drawer onClose={() => setStarterKitDrawerOpen(false)} visible={starterKitDrawerOpen}>
-      <h1>Starter Kit</h1>
+    <Drawer width='auto' onClose={() => setStarterKitDrawerOpen(false)} visible={starterKitDrawerOpen}>
+      <h1>Piano With Miss Emma Starter Kit</h1>
 
-      <p>The starter kit is really really good and you should buy it</p>
+      <div style={{ maxWidth: 'min(20rem, 80vw)', margin: '1rem auto' }}>
+
+        <Carousel dots autoplay>
+
+          <Img
+            fluid={data.kit1.childImageSharp.fluid}
+          />
+
+        </Carousel>
+
+      </div>
+
+      <p>Kit can be used in conjunction with instructional videos provided on the youtube channel <a href='https://www.youtube.com/channel/UCJcrv99z4efX0kV0nkCOsnQ?view_as=subscriber'>Piano With Miss Emma.</a></p>
+
+      <h4>Kit Contains</h4>
+      <ul>
+        <li>sticker pack (for use on the piano or keyboard all stickers are reusable up to 100 times)</li>
+        <li>right and left wrist bands (to help young children learn the difference)</li>
+        <li>notes house (to slide behind the keys, resting against the piano lid, sparking students' imagination and helping them to learn where the notes live!)</li>
+        <li>includes pdf of coloured number starter songs</li>
+      </ul>
 
       <Button loading={checkoutLoading} onClick={() => onCheckout()}>
         Buy
@@ -249,7 +268,7 @@ Please email me at <a href='mailto:emmagrace91@gmail.com'>emmagrace91@gmail.com<
 
     </Drawer>
 
-  </>
+         </>
 }
 
 export default Teaching

@@ -12,7 +12,7 @@ import Album from '../components/Album'
 function IndexPage () {
   const data = useStaticQuery(graphql`
     query {
-      iWroteYouASong: file(relativePath: { eq: "images/i-wrote-you-a-song.png" }) {
+      iWroteYouASong: file(relativePath: { eq: "images/i-wrote-you-a-song2.jpg" }) {
         childImageSharp {
           fluid(fit: CONTAIN) {
             ...GatsbyImageSharpFluid
