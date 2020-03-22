@@ -3,7 +3,7 @@ path: '/blog/so_long_new_york'
 title: 'So long New York'
 date: '2020-03-01'
 preview: 'This is a really great read about stuff'
-featureImage: 'images/teaching5.jpg'
+featureImage: 'images/teaching6.jpg'
 ---
 
 So long New York. Thanks for connecting me with memorable souls. Thanks for squeezing 15 new original songs and another album out of me. Thanks for teaching me to be a piano bar entertainer. Thanks for quadrupling my covers song list. Thanks for offering me a piano teacher who freed me of tension and pain in my playing, and for incubating my new approach to improvising. Thanks for giving me reason to find 8 extra notes in my vocal range. Thanks for the 40 amazing students and for awakening my love of teaching. Thanks for opening my eyes to how unusual it is to be born into prosperous times of peace. 
