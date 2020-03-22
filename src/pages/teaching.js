@@ -154,7 +154,7 @@ const Teaching = () => {
           hoverable
           cover={<Img fluid={data.pianoWithMissEmma.childImageSharp.fluid} />}
         >
-          <Meta title='Piano With Miss Emma' description='A piano channel focused on blah blah ' />
+          <Meta title='Piano With Miss Emma' description="Help young kids learn piano effortlessly. Instructional videos for adults to facilitate a play-based kid's piano method (appropriate for children 3.5- 8 years old). No experience required (For the adults or the children!) " />
         </Card>
 
         <Card
@@ -172,6 +172,14 @@ const Teaching = () => {
           cover={<Img fluid={data.teaching6.childImageSharp.fluid} />}
         >
           <Meta title='Lessons' description='I teach lessons from my home....' />
+        </Card>
+
+        <Card
+          hoverable
+          cover={<Img fluid={data.teaching6.childImageSharp.fluid} />}
+          actions={[<a href='mailto:emmagrace91@gmail.com'>Email Me</a>]}
+        >
+          <Meta title='Request Transcription' description='I can make you a transcription...' />
         </Card>
 
       </CardContainer>

@@ -68,15 +68,6 @@ function IndexPage () {
         />
       </div>
 
-      {/* <PageHeader
-        style={{ marginLeft: '2rem' }}
-        className='site-page-header'
-        // onBack={() => null}
-        title='Music'
-        // subTitle='Emma Stephenson'
-        backIcon={<MenuFoldOutlined />}
-      /> */}
-
       <AlbumContainer>
 
         <Album
@@ -84,6 +75,7 @@ function IndexPage () {
           title='I Wrote You A Song'
           subtitle='Studio album comprising ten original songs written by Emma, featuring:'
           showCollapse
+          linkSquidLink='http://bit.ly/iwroteyouasong'
           description={
             <>
               <p>
