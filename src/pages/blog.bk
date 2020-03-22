@@ -44,7 +44,7 @@ const Blog = () => {
       </Container>
 
     </Layout>
-         </>
+  </>
 }
 
 export default Blog

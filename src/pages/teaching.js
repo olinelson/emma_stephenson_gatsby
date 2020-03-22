@@ -276,7 +276,7 @@ Please email me at <a href='mailto:emmagrace91@gmail.com'>emmagrace91@gmail.com<
 
     </Drawer>
 
-         </>
+  </>
 }
 
 export default Teaching

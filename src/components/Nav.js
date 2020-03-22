@@ -59,7 +59,7 @@ function Nav () {
         </Menu.Item>
 
         <Menu.Item key='/blog'>
-          <Link to='/blog'>Blog</Link>
+          <a target='_blank' rel='noopener noreferrer' href='https://medium.com/@emmagrace91'>Blog</a>
         </Menu.Item>
 
         <Menu.Item key='/podcast'>
