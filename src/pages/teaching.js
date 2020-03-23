@@ -93,7 +93,21 @@ const Teaching = () => {
       }
       kit1: file(relativePath: { eq: "images/kit1.jpg" }) {
         childImageSharp {
-          fluid {
+          fluid(fit: COVER) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      notesHouse: file(relativePath: { eq: "images/notesHouse.jpg" }) {
+        childImageSharp {
+          fluid(fit: COVER) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      stickersOnPiano: file(relativePath: { eq: "images/stickersOnPiano.jpg" }) {
+        childImageSharp {
+          fluid(fit: COVER) {
             ...GatsbyImageSharpFluid
           }
         }
@@ -161,7 +175,7 @@ const Teaching = () => {
           onClick={() => setStarterKitDrawerOpen(true)}
           hoverable
 
-          cover={<img alt='example' src='https://i.ytimg.com/vi/Kt_JePg86b8/maxresdefault.jpg' />}
+          cover={<Img fluid={data.kit1.childImageSharp.fluid} />}
         >
           <Meta title='Piano w Miss Emma Starter Kit' description='a really good thing...' />
         </Card>
@@ -248,15 +262,21 @@ Please email me at <a href='mailto:emmagrace91@gmail.com'>emmagrace91@gmail.com<
     <Drawer width='auto' onClose={() => setStarterKitDrawerOpen(false)} visible={starterKitDrawerOpen}>
       <h1>Piano With Miss Emma Starter Kit</h1>
 
-      <div style={{ maxWidth: 'min(20rem, 80vw)', margin: '1rem auto' }}>
+      <div style={{ maxWidth: 'min(50rem, 80vw)', margin: '1rem auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(15rem, 1fr))', gridGap: '1rem' }}>
 
-        <Carousel dots autoplay>
+        {/* <Carousel dots autoplay> */}
 
-          <Img
-            fluid={data.kit1.childImageSharp.fluid}
-          />
+        <Img
+          fluid={data.kit1.childImageSharp.fluid}
+        />
+        <Img
+          fluid={data.notesHouse.childImageSharp.fluid}
+        />
+        <Img
+          fluid={data.stickersOnPiano.childImageSharp.fluid}
+        />
 
-        </Carousel>
+        {/* </Carousel> */}
 
       </div>
 
