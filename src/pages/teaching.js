@@ -112,6 +112,13 @@ const Teaching = () => {
           }
         }
       }
+      arrangement: file(relativePath: { eq: "images/arrangement.png" }) {
+        childImageSharp {
+          fluid(fit: COVER) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
 
      
 
@@ -121,8 +128,8 @@ const Teaching = () => {
 
   const CardContainer = styled.div`
     display: grid;
-    grid-gap: 1rem;
-   grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    grid-gap: 3rem;
+   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
     margin: 2rem auto;
    padding: 0 1rem;
     max-width: 70rem;
@@ -156,15 +163,14 @@ const Teaching = () => {
         </Carousel>
       </Container>
 
-      {/* <Jumbotron /> */}
-
       <CardContainer>
 
         <Card
-          onClick={() => {
-            window.location = 'https://www.youtube.com/channel/UCJcrv99z4efX0kV0nkCOsnQ?view_as=subscriber'
-            return null
-          }}
+          // onClick={() => {
+          //   window.location = 'https://www.youtube.com/channel/UCJcrv99z4efX0kV0nkCOsnQ?view_as=subscriber'
+          //   return null
+          // }}
+          actions={[<Button type='link' key='youtube' href='https://www.youtube.com/channel/UCJcrv99z4efX0kV0nkCOsnQ?view_as=subscriber'>Check it Out!</Button>]}
           hoverable
           cover={<Img fluid={data.pianoWithMissEmma.childImageSharp.fluid} />}
         >
@@ -172,28 +178,42 @@ const Teaching = () => {
         </Card>
 
         <Card
-          onClick={() => setStarterKitDrawerOpen(true)}
+          // onClick={() => setStarterKitDrawerOpen(true)}
           hoverable
-
+          actions={[<Button type='link' key='stButtonrter' onClick={() => setStarterKitDrawerOpen(true)}>More Info</Button>]}
+          // actions={[<a key='youtube' href='https://www.youtube.com/channel/UCJcrv99z4efX0kV0nkCOsnQ?view_as=subscriber'>Check it Out!</a>]}
           cover={<Img fluid={data.kit1.childImageSharp.fluid} />}
         >
-          <Meta title='Piano w Miss Emma Starter Kit' description='a really good thing...' />
+          <Meta title='Starter Kit' description='Purchase the $30 starter kit which can be used in conjunction with instructional videos provided on the youtube channel Piano With Miss Emma.' />
         </Card>
 
         <Card
-          onClick={() => setTeachingDrawerOpen(true)}
+          // onClick={() => setTeachingDrawerOpen(true)}
           hoverable
+          actions={[<Button type='link' key='youtube' onClick={() => setTeachingDrawerOpen(true)}>More Info</Button>]}
           cover={<Img fluid={data.teaching6.childImageSharp.fluid} />}
         >
-          <Meta title='Lessons' description='I teach lessons from my home....' />
+          <Meta title='Lessons' description='Thanks for considering me as you or your child’s piano teacher. If we work together, I promise to attend to you or your child’s musical development with compassion, joy and patience. As my previous six day teaching schedule in New York City would suggest, I truly love to teach and have a bounty of experience with students of all ages, levels and interests to draw upon.' />
         </Card>
 
         <Card
           hoverable
-          cover={<Img fluid={data.teaching6.childImageSharp.fluid} />}
-          actions={[<a href='mailto:emmagrace91@gmail.com'>Email Me</a>]}
+          cover={<Img fluid={data.arrangement.childImageSharp.fluid} />}
+          actions={[<Button type='link' href='mailto:emmagrace91@gmail.com'>Email Me</Button>]}
         >
-          <Meta title='Request Transcription' description='I can make you a transcription...' />
+          <Meta
+            title='Request Arrangement'
+            description={
+              <div>
+                <p>Got a kid who won' t stop singing the songs from Frozen II, or the latest jingle they absorbed from a cartoon?</p>
+                <p>I can turn short excerpts of these songs into simple piano arrangements using my coloured finger number method.</p>
+                <p>Even if you've never played piano before, you and your child can begin making music together at the piano instantly using red and blue colours and numbers 1 - 5.</p>
+
+                <p>I charge $80 per arrangement.</p>
+                <p>Examples can be found in my starter kit booklet. Email me directly for a sample and/or to make an order."</p>
+              </div>
+            }
+          />
         </Card>
 
       </CardContainer>
