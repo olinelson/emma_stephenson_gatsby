@@ -4,14 +4,18 @@ import { useStaticQuery, graphql, navigate } from 'gatsby'
 import Img from 'gatsby-image'
 import styled from 'styled-components'
 
+import WithLocation from '../components/WithLocation'
+
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import { Container } from '../components/MyStyledComponents'
-import { Carousel, Button, Card, Drawer } from 'antd'
+import { Carousel, Button, Card, Drawer, Modal, message } from 'antd'
+import { countries } from '../utils'
+import queryString from 'query-string'
 
 const { Meta } = Card
 
-const Teaching = () => {
+const Teaching = (props) => {
   useEffect(() => {
     const script = document.createElement('script')
 
@@ -21,17 +25,28 @@ const Teaching = () => {
     document.body.appendChild(script)
   }, [])
 
+  const pageQuery = queryString.parse(props.location.search)
+
+  if (pageQuery.stripe && pageQuery.stripe === 'success') {
+    Modal.success({ title: 'Purchase Complete', content: 'Thanks, you will receive an email confirmation shortly!' })
+    navigate('/teaching')
+  }
+  if (pageQuery.stripe && pageQuery.stripe === 'cancel') {
+    message.warning('Purchase canceled')
+    navigate('/teaching')
+  }
+
   const onCheckout = () => {
     setCheckoutLoading(true)
-    const stripe = Stripe('pk_test_dFVuzatZp76wOfS5ylB1ksF000wXhysIRM')
+    const stripe = Stripe('pk_live_MUiJenwf3RE3gr8hqovEMTji00Y4bfbTAu')
 
     stripe.redirectToCheckout({
-      items: [{ sku: 'sku_GvoQ9BUcwbW5Pb', quantity: 1 }],
+      items: [{ sku: 'sku_GzBcYDWUtwAGXt', quantity: 1 }],
       shippingAddressCollection: {
-        allowedCountries: ['US', 'CA', 'AU', 'NZ']
+        allowedCountries: countries
       },
-      successUrl: 'https://your-website.com/success',
-      cancelUrl: 'https://your-website.com/canceled'
+      successUrl: 'https://emmastephensonmusic.com/teaching?stripe=success',
+      cancelUrl: 'https://emmastephensonmusic.com/teaching?stripe=cancel'
     })
       .then(function (result) {
         if (result.error) {
@@ -310,6 +325,23 @@ Please email me at <a href='mailto:emmagrace91@gmail.com'>emmagrace91@gmail.com<
         <li>includes pdf of coloured number starter songs</li>
       </ul>
 
+      <p>Listed price does not include postage. You card will be charged for postage after the order is processed. Package will be delivered by economy air and should arrive 5-10 days after your order is submitted.</p>
+
+      <h4>Postage Estimate</h4>
+      <ul>
+
+        <li>Within Australia: $8.95AUD</li>
+        <li>New Zealand: $10.20AUD</li>
+        <li>Europe: $21.30AUD</li>
+        <li>Canada: $16AUD</li>
+        <li>United States:$16AUD</li>
+        <li>United Kingdom: $20.20AUD</li>
+        <li>South America: $25AUD</li>
+        <li>Africa: $26AUD</li>
+        <li>Asia: $22AUD</li>
+        <li>Russia: $25AUD</li>
+
+      </ul>
       <Button loading={checkoutLoading} onClick={() => onCheckout()}>
         Buy
       </Button>
@@ -319,4 +351,4 @@ Please email me at <a href='mailto:emmagrace91@gmail.com'>emmagrace91@gmail.com<
   </>
 }
 
-export default Teaching
+export default WithLocation(Teaching)
