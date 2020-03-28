@@ -328,7 +328,7 @@ Please email me at <a href='mailto:emmagrace91@gmail.com'>emmagrace91@gmail.com<
 
       <p>Listed price does not include postage. You card will be charged for postage after the order is processed. Package will be delivered by economy air and should arrive 5-10 days after your order is submitted.</p>
 
-      <h4>Postage Estimate</h4>
+      <h4>Postage Estimate (for small orders weighing less than 5kg)</h4>
       <ul>
 
         <li>Within Australia: $8.95AUD</li>
