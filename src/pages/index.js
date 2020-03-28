@@ -76,6 +76,11 @@ function IndexPage () {
           subtitle='Studio album comprising ten original songs written by Emma, featuring:'
           showCollapse
           linkSquidLink='http://bit.ly/iwroteyouasong'
+          spotifyLink='https://open.spotify.com/album/6WXgcMmZ5zGChmGpMRQY3v?si=q_MLsiq2RT-7RDHvG-7RYw'
+          appleMusicLink='https://music.apple.com/au/album/i-wrote-you-a-song/1504299136'
+          amazonLink='https://music.amazon.in/albums/B086BGF6NZ?ref=dm_sh_1ae6-4c9e-dmcp-97ea-b8eeb&musicTerritory=IN&marketplaceId=A21TJRUUN4KGV'
+
+
           description={
             <>
               <p>

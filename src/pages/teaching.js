@@ -9,7 +9,7 @@ import WithLocation from '../components/WithLocation'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import { Container } from '../components/MyStyledComponents'
-import { Carousel, Button, Card, Drawer, Modal, message } from 'antd'
+import { Carousel, Button, Card, Drawer, Modal, message, InputNumber, Divider, Statistic } from 'antd'
 import { countries } from '../utils'
 import queryString from 'query-string'
 
@@ -36,12 +36,17 @@ const Teaching = (props) => {
     navigate('/teaching')
   }
 
+  const [teachingDrawerOpen, setTeachingDrawerOpen] = useState(false)
+  const [starterKitDrawerOpen, setStarterKitDrawerOpen] = useState(false)
+  const [checkoutLoading, setCheckoutLoading] = useState(false)
+  const [quantity, setQuantity] = useState(1)
+
   const onCheckout = () => {
     setCheckoutLoading(true)
     const stripe = Stripe('pk_live_MUiJenwf3RE3gr8hqovEMTji00Y4bfbTAu')
 
     stripe.redirectToCheckout({
-      items: [{ sku: 'sku_GzBcYDWUtwAGXt', quantity: 1 }],
+      items: [{ sku: 'sku_GzBcYDWUtwAGXt', quantity }],
       shippingAddressCollection: {
         allowedCountries: countries
       },
@@ -55,10 +60,6 @@ const Teaching = (props) => {
         }
       })
   }
-
-  const [teachingDrawerOpen, setTeachingDrawerOpen] = useState(false)
-  const [starterKitDrawerOpen, setStarterKitDrawerOpen] = useState(false)
-  const [checkoutLoading, setCheckoutLoading] = useState(false)
 
   const data = useStaticQuery(graphql`
     query {
@@ -342,8 +343,16 @@ Please email me at <a href='mailto:emmagrace91@gmail.com'>emmagrace91@gmail.com<
         <li>Russia: $25AUD</li>
 
       </ul>
-      <Button loading={checkoutLoading} onClick={() => onCheckout()}>
-        Buy
+
+      <h4>Choose Quantity</h4>
+      <span>
+        <InputNumber min={1} defaultValue={3} value={quantity} onChange={(d) => setQuantity(d)} />
+
+      </span>
+      <Divider />
+      <Statistic title='Price' value={`AUD $${quantity * 30}` + '.00'} />
+      <Button style={{ margin: '1rem 0' }} size='large' loading={checkoutLoading} onClick={() => onCheckout()}>
+        Buy Now
       </Button>
 
     </Drawer>
