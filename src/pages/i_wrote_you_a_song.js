@@ -18,6 +18,7 @@ import SEO from '../components/seo'
 
 const PageContainer = styled.div`
   height: 100vh;
+  min-height: 70rem;
   background: rgba(0,0,0,.5);
   display: grid;
 `
@@ -52,7 +53,7 @@ const Container = styled.div`
   display: grid;
   justify-items: center;
   grid-template-columns: 1fr;
-  height: 100%;
+  // height: 100%;
   grid-template-rows: auto 1fr;
   grid-gap: 1rem;
 `
@@ -61,9 +62,7 @@ const BrandLink = styled.a`
   justify-self: end;
 `
 const BackToSite = styled.div`
-  position: absolute;
-  bottom: 1rem;
-  left: 1rem;
+margin-top: 2rem;
   
 `
 
@@ -144,15 +143,16 @@ export default () => {
               }
             }}
           />
+          <BackToSite>
+            <PageHeader
+              title='Emma Stephenson'
+              onBack={() => navigate('/')}
+            />
+          </BackToSite>
         </Container>
 
-        <BackToSite>
-          <PageHeader
-            title='Emma Stephenson'
-            onBack={() => navigate('/')}
-          />
-        </BackToSite>
       </PageContainer>
+
     </>
 
   )
