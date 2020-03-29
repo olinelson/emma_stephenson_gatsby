@@ -10,6 +10,7 @@ import React from 'react'
 import Nav from './Nav'
 import Footer from './Footer'
 import styled from 'styled-components'
+import Helmet from 'react-helmet'
 
 const ContentContainer = styled.div`
  
@@ -20,20 +21,22 @@ const SiteContainer = styled.div`
     grid-template-columns: 1fr;
     grid-template-rows: auto 1fr auto;
     min-height: 100vh;
+    background: ${props => props.background || 'black'};
 `
 
-const Layout = ({ children }) => {
+const Layout = ({ children, background }) => {
   return (
-    <>
+    <div>
       <Nav />
-      <SiteContainer>
+
+      <SiteContainer background={background}>
 
         <ContentContainer>{children}</ContentContainer>
         {/* spacer */}
         <div />
         <Footer />
       </SiteContainer>
-    </>
+    </div>
   )
 }
 

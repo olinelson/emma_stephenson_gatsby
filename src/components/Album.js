@@ -7,6 +7,7 @@ import AmazonIcon from '../Icons/AmazonIcon'
 import GoogleIcon from '../Icons/GoogleIcon'
 import LinkSquidIcon from '../Icons/LinkSquidIcon'
 import styled from 'styled-components'
+import YoutubeIcon from '../Icons/YoutubeIcon'
 
 const { Panel } = Collapse
 const { Meta } = Card
@@ -29,10 +30,10 @@ const IconLink = styled.a`
     align-content: center;
 `
 
-function Album ({ imagePath, title, spotifyLink, appleMusicLink, amazonLink, googleLink, linkSquidLink, subtitle, description, showCollapse }) {
+function Album ({ imagePath, title, spotifyLink, appleMusicLink, amazonLink, googleLink, youtubeLink, linkSquidLink, subtitle, description, showCollapse, maxWidth }) {
   return (
     <Card
-      style={{ width: '100%', maxWidth: '30rem', justifySelf: 'center' }}
+      style={{ width: '100%', maxWidth: maxWidth || '30rem', justifySelf: 'center' }}
       cover={
         <Img
           fluid={imagePath}
@@ -67,6 +68,10 @@ function Album ({ imagePath, title, spotifyLink, appleMusicLink, amazonLink, goo
                 ? <IconLink href={googleLink}><GoogleIcon /> </IconLink>
                 : null}
 
+              {youtubeLink
+                ? <IconLink href={youtubeLink}><YoutubeIcon /> </IconLink>
+                : null}
+
             </MusicIconContainer>
 
             {showCollapse
@@ -74,7 +79,7 @@ function Album ({ imagePath, title, spotifyLink, appleMusicLink, amazonLink, goo
                 <Panel style={{ border: 'none', margin: '.5rem 0' }} header={subtitle} key='1'>
                   {description}
                 </Panel>
-              </Collapse>
+                </Collapse>
               : subtitle}
 
           </>

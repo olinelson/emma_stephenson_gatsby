@@ -9,6 +9,16 @@ import styled from 'styled-components'
 
 import Album from '../components/Album'
 
+const AlbumContainer = styled.div`
+      display: grid;
+      padding: 1rem;
+      grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+      grid-gap: 2rem;
+      margin: 4rem auto;
+       max-width: 80rem;
+    width: 100vw;
+    `
+
 function IndexPage () {
   const data = useStaticQuery(graphql`
     query {
@@ -44,16 +54,6 @@ function IndexPage () {
     }
   `)
 
-  const AlbumContainer = styled.div`
-      display: grid;
-      padding: 1rem;
-      grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
-      grid-gap: 2rem;
-      margin: 4rem auto;
-       max-width: 80rem;
-    width: 100vw;
-    `
-
   return (
     <Layout>
       <SEO title='Music' />
@@ -79,7 +79,7 @@ function IndexPage () {
           spotifyLink='https://open.spotify.com/album/6WXgcMmZ5zGChmGpMRQY3v?si=q_MLsiq2RT-7RDHvG-7RYw'
           appleMusicLink='https://music.apple.com/au/album/i-wrote-you-a-song/1504299136'
           amazonLink='https://music.amazon.in/albums/B086BGF6NZ?ref=dm_sh_1ae6-4c9e-dmcp-97ea-b8eeb&musicTerritory=IN&marketplaceId=A21TJRUUN4KGV'
-
+          youtubeLink='https://www.youtube.com/watch?v=w4VBIZa4gZs&list=OLAK5uy_m-nhE-Yr_m4IfSNOnr14v4HjnStgoj-qs'
 
           description={
             <>
@@ -124,6 +124,7 @@ function IndexPage () {
           appleMusicLink='https://geo.music.apple.com/us/artist/trash-can-dream/1422156907?mt=1&app=music'
           amazonLink='https://music.amazon.com/artists/B07G65S2JM?ref=dm_sh_642c-82fb-dmcp-3388-a0a4a&musicTerritory=US&marketplaceId=ATVPDKIKX0DER'
           googleLink='https://play.google.com/store/music/artist/Trash_Can_Dream?id=Agbjcbipjjf3ummf5ftw6tyu5my&hl=en_US'
+          youtubeLink='https://www.youtube.com/channel/UCzyml733Yndw70UzI1VWNsg'
         />
 
       </AlbumContainer>
