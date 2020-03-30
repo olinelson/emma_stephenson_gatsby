@@ -232,7 +232,7 @@ const Teaching = (props) => {
                 <p>I can turn short excerpts of these songs into simple piano arrangements using my coloured finger number method.</p>
                 <p>Even if you've never played piano before, you and your child can begin making music together at the piano instantly using red and blue colours and numbers 1 - 5.</p>
 
-                <p>I charge $80 per arrangement.</p>
+                <p>I charge AUD $80 per arrangement.</p>
                 <p>Examples can be found in my starter kit booklet. Email me directly for a sample and/or to make an order."</p>
               </div>
             }
@@ -367,7 +367,7 @@ Please email me at <a href='mailto:emmagrace91@gmail.com'>emmagrace91@gmail.com<
 
     </Drawer>
 
-         </>
+  </>
 }
 
 export default WithLocation(Teaching)
