@@ -271,7 +271,7 @@ const Teaching = (props) => {
       </p>
 
       <p>
-      Each student is entitled to 1 free 30 minute trial lesson. Following your trial, if you wish to continue, you must pay for 23 lessons upfront, to be completed in a 26 week commitment period (roughly 6 months). Each 23 lessons at $100 per lesson = $2300.
+      Each student is entitled to 1 free 30 minute trial lesson. Following your trial, if you wish to continue, you must pay for 23 lessons upfront, to be completed in a 26 week commitment period (roughly 6 months). Each 23 lessons at AUD $100 per lesson = $2300.
       </p>
 
       <p>
@@ -367,7 +367,7 @@ Please email me at <a href='mailto:emmagrace91@gmail.com'>emmagrace91@gmail.com<
 
     </Drawer>
 
-  </>
+         </>
 }
 
 export default WithLocation(Teaching)
