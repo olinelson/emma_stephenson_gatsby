@@ -107,21 +107,28 @@ const Teaching = (props) => {
           }
         }
       }
-      kit1: file(relativePath: { eq: "images/kit1.jpg" }) {
+      kit1Square: file(relativePath: { eq: "images/starter_kit/kit1Square.jpg" }) {
         childImageSharp {
           fluid(fit: COVER) {
             ...GatsbyImageSharpFluid
           }
         }
       }
-      notesHouse: file(relativePath: { eq: "images/notesHouse.jpg" }) {
+      kit1: file(relativePath: { eq: "images/starter_kit/kit1.png" }) {
         childImageSharp {
           fluid(fit: COVER) {
             ...GatsbyImageSharpFluid
           }
         }
       }
-      stickersOnPiano: file(relativePath: { eq: "images/stickersOnPiano.jpg" }) {
+      kit2: file(relativePath: { eq: "images/starter_kit/kit2.png" }) {
+        childImageSharp {
+          fluid(fit: COVER) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+      kit3: file(relativePath: { eq: "images/starter_kit/kit3.png" }) {
         childImageSharp {
           fluid(fit: COVER) {
             ...GatsbyImageSharpFluid
@@ -205,7 +212,7 @@ const Teaching = (props) => {
           hoverable
           actions={[<Button type='link' key='stButtonrter' onClick={() => setStarterKitDrawerOpen(true)}>More Info</Button>]}
           // actions={[<a key='youtube' href='https://www.youtube.com/channel/UCJcrv99z4efX0kV0nkCOsnQ?view_as=subscriber'>Check it Out!</a>]}
-          cover={<Img fluid={data.kit1.childImageSharp.fluid} />}
+          cover={<Img fluid={data.kit1Square.childImageSharp.fluid} />}
         >
           <Meta title='Starter Kit' description='Purchase the $30 starter kit which can be used in conjunction with instructional videos provided on the youtube channel Piano With Miss Emma.' />
         </Card>
@@ -313,13 +320,10 @@ Please email me at <a href='mailto:emmagrace91@gmail.com'>emmagrace91@gmail.com<
             fluid={data.kit1.childImageSharp.fluid}
           />
           <Img
-            fluid={data.notesHouse.childImageSharp.fluid}
+            fluid={data.kit2.childImageSharp.fluid}
           />
           <Img
-            fluid={data.stickersOnPiano.childImageSharp.fluid}
-          />
-          <Img
-            fluid={data.starterKitIpad.childImageSharp.fluid}
+            fluid={data.kit3.childImageSharp.fluid}
           />
 
         </Carousel>
