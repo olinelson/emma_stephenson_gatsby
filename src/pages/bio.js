@@ -5,7 +5,10 @@ import Img from 'gatsby-image'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
+import CreditedImage from '../components/CreditedImg'
 import { Container } from '../components/MyStyledComponents'
+
+import styled from 'styled-components'
 
 const Bio = () => {
   const data = useStaticQuery(graphql`
@@ -32,12 +35,13 @@ const Bio = () => {
         <h1>Bio</h1>
 
         <div style={{ float: 'right' }}>
-          <Img
+          <CreditedImage
             fluid={data.emmaAtPiano1.childImageSharp.fluid}
             alt='Emma Stephenson'
             style={{ maxWidth: '20rem', width: '50vw', maxHeight: '20rem', margin: ' 0 1rem' }}
-
+            creditText='Little Olive Photography'
           />
+
         </div>
 
         <p>

@@ -3,6 +3,7 @@ import { useStaticQuery, graphql } from 'gatsby'
 import Img from 'gatsby-image'
 
 import Layout from '../components/layout'
+import CreditedImg from '../components/CreditedImg'
 
 import SEO from '../components/seo'
 import styled from 'styled-components'
@@ -59,12 +60,12 @@ function IndexPage () {
       <SEO title='Music' />
       <div style={{ background: 'black' }}>
         <h1 style={{ zIndex: '100', position: 'absolute', top: 'min(80vw, 70vh)', fontSize: '10vw', left: '1rem' }}>Emma Stephenson</h1>
-        <Img
+        <CreditedImg
           fluid={data.headshot.childImageSharp.fluid}
           alt='Emma Stephenson'
+          creditText='Frank Crews Photography'
           // imgStyle={{ maxHeight: '100vh' }}
           style={{ margin: 'auto 15vw auto auto', maxHeight: '100vh', maxWidth: '80vh', width: '100%' }}
-        // style={{ border: '1px solid red', background: 'black' }}
         />
       </div>
 
@@ -101,6 +102,9 @@ function IndexPage () {
 
               </p>
               <p><b>Bass:</b> Sam Zerna</p>
+
+              <p>Mixed by Darren Fewins and mastered by Mark Christensen @ Engine Room Audio (NYC)</p>
+
             </>
           }
         />

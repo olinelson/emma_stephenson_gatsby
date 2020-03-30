@@ -135,6 +135,13 @@ const Teaching = (props) => {
           }
         }
       }
+      starterKitIpad: file(relativePath: { eq: "images/starterKitIpad.jpg" }) {
+        childImageSharp {
+          fluid(fit: COVER) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
 
      
 
@@ -298,21 +305,24 @@ Please email me at <a href='mailto:emmagrace91@gmail.com'>emmagrace91@gmail.com<
     <Drawer width='auto' onClose={() => setStarterKitDrawerOpen(false)} visible={starterKitDrawerOpen}>
       <h1>Piano With Miss Emma Starter Kit</h1>
 
-      <div style={{ maxWidth: 'min(50rem, 80vw)', margin: '1rem auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(15rem, 1fr))', gridGap: '1rem' }}>
+      <div style={{ maxWidth: 'min(50rem, 80vw)', margin: '1rem auto', display: 'grid', gridTemplateColumns: '100%', gridGap: '1rem' }}>
 
-        {/* <Carousel dots autoplay> */}
+        <Carousel dots autoplay style={{ margin: 'auto' }}>
 
-        <Img
-          fluid={data.kit1.childImageSharp.fluid}
-        />
-        <Img
-          fluid={data.notesHouse.childImageSharp.fluid}
-        />
-        <Img
-          fluid={data.stickersOnPiano.childImageSharp.fluid}
-        />
+          <Img
+            fluid={data.kit1.childImageSharp.fluid}
+          />
+          <Img
+            fluid={data.notesHouse.childImageSharp.fluid}
+          />
+          <Img
+            fluid={data.stickersOnPiano.childImageSharp.fluid}
+          />
+          <Img
+            fluid={data.starterKitIpad.childImageSharp.fluid}
+          />
 
-        {/* </Carousel> */}
+        </Carousel>
 
       </div>
 
@@ -357,7 +367,7 @@ Please email me at <a href='mailto:emmagrace91@gmail.com'>emmagrace91@gmail.com<
 
     </Drawer>
 
-  </>
+         </>
 }
 
 export default WithLocation(Teaching)
