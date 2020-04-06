@@ -76,6 +76,7 @@ function IndexPage () {
           title='I Wrote You A Song'
           subtitle='Studio album comprising ten original songs written by Emma, featuring:'
           showCollapse
+          bandcampLink='https://emmastephenson.bandcamp.com/album/i-wrote-you-a-song'
           linkSquidLink='http://bit.ly/iwroteyouasong'
           spotifyLink='https://open.spotify.com/album/6WXgcMmZ5zGChmGpMRQY3v?si=q_MLsiq2RT-7RDHvG-7RYw'
           appleMusicLink='https://music.apple.com/au/album/i-wrote-you-a-song/1504299136'

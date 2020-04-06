@@ -13,6 +13,7 @@ import YoutubeIcon from '../Icons/YoutubeIcon'
 import { LinkOutlined } from '@ant-design/icons'
 
 import SEO from '../components/seo'
+import BandcampIcon from '../Icons/BandcampIcon'
 
 // import 'antd/dist/antd.css'
 
@@ -91,10 +92,12 @@ export default () => {
 
   const musicLinks = [
     { service: 'linksquid', link: 'http://bit.ly/iwroteyouasong' },
+    { service: 'bandcamp', link: 'https://emmastephenson.bandcamp.com/album/i-wrote-you-a-song' },
     { service: 'spotify', link: 'https://open.spotify.com/album/6WXgcMmZ5zGChmGpMRQY3v?si=q_MLsiq2RT-7RDHvG-7RYw' },
     { service: 'appleMusic', link: 'https://music.apple.com/au/album/i-wrote-you-a-song/1504299136' },
     { service: 'amazon', link: 'https://music.amazon.in/albums/B086BGF6NZ?ref=dm_sh_1ae6-4c9e-dmcp-97ea-b8eeb&musicTerritory=IN&marketplaceId=A21TJRUUN4KGV' },
     { service: 'youtube', link: 'https://www.youtube.com/watch?v=w4VBIZa4gZs&list=OLAK5uy_m-nhE-Yr_m4IfSNOnr14v4HjnStgoj-qs' }
+
   ]
 
   return (
@@ -122,6 +125,8 @@ export default () => {
               switch (item.service) {
                 case 'linksquid':
                   return <StyledListItem><IconLink href={item.link}><LinkSquidIcon /></IconLink> <BrandLink href={item.link}>linksquid</BrandLink></StyledListItem>
+                case 'bandcamp':
+                  return <StyledListItem><IconLink href={item.link}><BandcampIcon /></IconLink> <BrandLink href={item.link}>Bandcamp</BrandLink></StyledListItem>
 
                 case 'spotify':
                   return <StyledListItem><IconLink href={item.link} style={{ color: '#1DB954' }}><SpotifyIcon /></IconLink>  <BrandLink href={item.link}>Spotify</BrandLink></StyledListItem>

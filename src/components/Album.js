@@ -8,6 +8,7 @@ import GoogleIcon from '../Icons/GoogleIcon'
 import LinkSquidIcon from '../Icons/LinkSquidIcon'
 import styled from 'styled-components'
 import YoutubeIcon from '../Icons/YoutubeIcon'
+import BandcampIcon from '../Icons/BandcampIcon'
 
 const { Panel } = Collapse
 const { Meta } = Card
@@ -30,7 +31,7 @@ const IconLink = styled.a`
     align-content: center;
 `
 
-function Album ({ imagePath, title, spotifyLink, appleMusicLink, amazonLink, googleLink, youtubeLink, linkSquidLink, subtitle, description, showCollapse, maxWidth }) {
+function Album ({ imagePath, title, bandcampLink, spotifyLink, appleMusicLink, amazonLink, googleLink, youtubeLink, linkSquidLink, subtitle, description, showCollapse, maxWidth }) {
   return (
     <Card
       style={{ width: '100%', maxWidth: maxWidth || '30rem', justifySelf: 'center' }}
@@ -50,6 +51,9 @@ function Album ({ imagePath, title, spotifyLink, appleMusicLink, amazonLink, goo
             <MusicIconContainer>
               {linkSquidLink
                 ? <IconLink href={linkSquidLink}><LinkSquidIcon /> </IconLink>
+                : null}
+              {bandcampLink
+                ? <IconLink href={bandcampLink}><BandcampIcon /> </IconLink>
                 : null}
 
               {spotifyLink
