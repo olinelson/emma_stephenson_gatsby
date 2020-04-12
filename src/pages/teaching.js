@@ -237,10 +237,16 @@ const Teaching = (props) => {
               <div>
                 <p>Got a kid who won' t stop singing the songs from Frozen II, or the latest jingle they absorbed from a cartoon?</p>
                 <p>I can turn short excerpts of these songs into simple piano arrangements using my coloured finger number method.</p>
-                <p>Even if you've never played piano before, you and your child can begin making music together at the piano instantly using red and blue colours and numbers 1 - 5.</p>
+                <p>Even if you've never played piano before, you and your child can begin making music together at the piano instantly using red and blue colours and numbers 1 - 5.</p>
 
-                <p>I charge AUD $80 per arrangement.</p>
-                <p>Examples can be found in my starter kit booklet. Email me directly for a sample and/or to make an order."</p>
+                <h4>Pricing</h4>
+
+                <p><h5>$80</h5> PDF only. 1 page arrangement using coloured finger numbers, delivered to your inbox within 2 weeks of your order placement.</p>
+                <p><h5>$150</h5> PDF + Instructional Youtube Video with backing track. PDF and youtube video delivered to your inbox within 2 weeks of your order placement.</p>
+
+                <p>Examples of PDFs can be found in my starter kit booklet. Examples of youtube videos can be found <a target='blank' href='https://www.youtube.com/channel/UCJcrv99z4efX0kV0nkCOsnQ'>here</a> </p>
+
+                <p><a href='mailto:emmagrace91@gmail.com'>Email me</a> directly for a sample and/or to make an order.</p>
               </div>
             }
           />
