@@ -213,10 +213,6 @@ const Teaching = (props) => {
 
         <CardContainer>
           <Card
-            // onClick={() => {
-            //   window.location = 'https://www.youtube.com/channel/UCJcrv99z4efX0kV0nkCOsnQ?view_as=subscriber'
-            //   return null
-            // }}
             actions={[
               <Button
                 type='link'
@@ -350,20 +346,20 @@ const Teaching = (props) => {
               __html: data.introduction.edges[0].node.html
             }}
           />
+          <p>Please email me at <a href='mailto:pianowithmissemma@gmail.com'>pianowithmissemma@gmail.com</a> with any questions.</p>
           <Collapse defaultActiveKey={['Adults and older children']}>
-            {teachingDocs
-              .map(e => (
-                <Panel
-                  header={e.node.frontmatter.title}
-                  key={e.node.frontmatter.title}
-                >
-                  <div
-                    dangerouslySetInnerHTML={{
-                      __html: e.node.html
-                    }}
-                  />
-                </Panel>
-              ))}
+            {teachingDocs.map(e => (
+              <Panel
+                header={e.node.frontmatter.title}
+                key={e.node.frontmatter.title}
+              >
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: e.node.html
+                  }}
+                />
+              </Panel>
+            ))}
           </Collapse>
         </Container>
       </Drawer>
