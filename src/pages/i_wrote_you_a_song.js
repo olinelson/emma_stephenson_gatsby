@@ -1,21 +1,16 @@
 import React from 'react'
 import styled from 'styled-components'
-import Album from '../components/Album'
 import Img from 'gatsby-image'
 import { useStaticQuery, graphql, navigate } from 'gatsby'
-import Layout from '../components/layout'
 import { List, PageHeader } from 'antd'
 import LinkSquidIcon from '../Icons/LinkSquidIcon'
 import SpotifyIcon from '../Icons/SpotifyIcon'
 import AppleMusicIcon from '../Icons/AppleMusicIcon'
 import AmazonIcon from '../Icons/AmazonIcon'
 import YoutubeIcon from '../Icons/YoutubeIcon'
-import { LinkOutlined } from '@ant-design/icons'
 
-import SEO from '../components/seo'
+import Seo from '../components/seo'
 import BandcampIcon from '../Icons/BandcampIcon'
-
-// import 'antd/dist/antd.css'
 
 const PageContainer = styled.div`
   height: 100vh;
@@ -23,18 +18,15 @@ const PageContainer = styled.div`
   background: rgba(0,0,0,.5);
   display: grid;
 `
-
 const IconLink = styled.a`
-    display: flex;
-    align-content: center;
-    font-size: 2rem;
-    // color: white;
+  display: flex;
+  align-content: center;
+  font-size: 2rem;
 `
 
 const BlurredHeader = styled.div`
   clip-path: ellipse(90vw 25vh at 50% 0%);
   width: 100vw;
-  // min-height: 50vh;
   filter: blur(.5rem);
 `
 const StyledListItem = styled(List.Item)`
@@ -54,7 +46,6 @@ const Container = styled.div`
   display: grid;
   justify-items: center;
   grid-template-columns: 1fr;
-  // height: 100%;
   grid-template-rows: auto 1fr;
   grid-gap: 1rem;
 `
@@ -64,7 +55,6 @@ const BrandLink = styled.a`
 `
 const BackToSite = styled.div`
 margin-top: 2rem;
-  
 `
 
 export default () => {
@@ -84,9 +74,6 @@ export default () => {
           }
         }
       }
-
-      
-     
     }
   `)
 
@@ -97,12 +84,11 @@ export default () => {
     { service: 'appleMusic', link: 'https://music.apple.com/au/album/i-wrote-you-a-song/1504299136' },
     { service: 'amazon', link: 'https://music.amazon.in/albums/B086BGF6NZ?ref=dm_sh_1ae6-4c9e-dmcp-97ea-b8eeb&musicTerritory=IN&marketplaceId=A21TJRUUN4KGV' },
     { service: 'youtube', link: 'https://www.youtube.com/watch?v=w4VBIZa4gZs&list=OLAK5uy_m-nhE-Yr_m4IfSNOnr14v4HjnStgoj-qs' }
-
   ]
 
   return (
     <>
-      <SEO title='I Wrote You A Song' />
+      <Seo title='I Wrote You A Song' />
       <PageContainer>
         <BlurredHeader>
           <Img
@@ -120,7 +106,6 @@ export default () => {
           <List
             style={{ minWidth: 'min(20rem, 80vw)' }}
             dataSource={musicLinks}
-
             renderItem={item => {
               switch (item.service) {
                 case 'linksquid':
@@ -155,10 +140,7 @@ export default () => {
             />
           </BackToSite>
         </Container>
-
       </PageContainer>
-
     </>
-
   )
 }

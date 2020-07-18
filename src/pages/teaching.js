@@ -170,6 +170,7 @@ const Teaching = (props) => {
             id
             frontmatter {
               title
+              order
             }
             html
           }
@@ -187,7 +188,10 @@ const Teaching = (props) => {
     max-width: 70rem;
     width: 100vw;
   `
-  console.log(data)
+
+  const teachingDocs = data.teachingDetails.edges.sort(
+    (a, b) => a.node.frontmatter.order - b.node.frontmatter.order
+  )
 
   return (
     <>
@@ -347,11 +351,7 @@ const Teaching = (props) => {
             }}
           />
           <Collapse defaultActiveKey={['Adults and older children']}>
-            {console.log(data.teachingDetails)}
-            {data.teachingDetails.edges
-              .sort(
-                (a, b) => a.node.frontmatter.order - b.node.frontmatter.order
-              )
+            {teachingDocs
               .map(e => (
                 <Panel
                   header={e.node.frontmatter.title}
