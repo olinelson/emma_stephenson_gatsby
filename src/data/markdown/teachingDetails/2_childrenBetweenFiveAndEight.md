@@ -1,0 +1,5 @@
+---
+title: "Children between five and eight"
+order: 2
+---
+For children between the ages of 5 and 8, I keep lessons play-based and creative, unless requested otherwise by the parents. My lessons with young children always involve the use of pictures, colors, stickers, motivational games, imagination, and storytelling. My goal at that stage of the journey is to help the child to associate music and piano playing with positive emotions, hopefully creating a somewhat addictive experience that will fuel future motivation and encourage persistent practice as they grow older and become more capable of self-directed learning. For these younger students, I also have a YouTube channel: Piano With Miss Emma, dedicated to sharing my tips for teaching and learning the piano, including games and activities that parents with no experience can use to get their child acquainted with the piano at an early age.
