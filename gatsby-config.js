@@ -15,16 +15,13 @@ module.exports = {
     'gatsby-transformer-sharp',
     'gatsby-plugin-sharp',
     'gatsby-transformer-remark',
-    'gatsby-plugin-antd',
     {
       resolve: 'gatsby-plugin-less',
       options: {
-        lessOptions: {
-          javascriptEnabled: true,
-          modifyVars: {
-            'font-size-base': '16px',
-            'primary-color': '#ea2940'
-          }
+        javascriptEnabled: true,
+        modifyVars: {
+          'font-size-base': '16px',
+          'primary-color': '#ea2940'
         }
       }
     },
@@ -47,5 +44,6 @@ module.exports = {
         // Add any options here
       }
     }
+
   ]
 }
