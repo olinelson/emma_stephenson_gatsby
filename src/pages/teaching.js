@@ -1,25 +1,46 @@
 /* global Stripe */
-import React, { useState, useEffect } from 'react'
-import { useStaticQuery, graphql, navigate } from 'gatsby'
-import Img from 'gatsby-image'
-import styled from 'styled-components'
-import WithLocation from '../components/WithLocation'
+import React, { useState, useEffect } from "react"
+import { useStaticQuery, graphql, navigate } from "gatsby"
+import Img from "gatsby-image"
+import styled from "styled-components"
+import WithLocation from "../components/WithLocation"
 
-import Layout from '../components/layout'
-import SEO from '../components/seo'
-import { Container } from '../components/MyStyledComponents'
-import { Carousel, Button, Card, Drawer, Collapse, Modal, message, InputNumber, Divider, Statistic } from 'antd'
-import { countries } from '../utils'
-import queryString from 'query-string'
+import Layout from "../components/layout"
+import SEO from "../components/seo"
+import { Container } from "../components/MyStyledComponents"
+import {
+  Carousel,
+  Button,
+  Card,
+  Drawer,
+  Collapse,
+  Modal,
+  message,
+  InputNumber,
+  Divider,
+  Statistic,
+} from "antd"
+import { countries } from "../utils"
+import queryString from "query-string"
 
 const { Meta } = Card
 const { Panel } = Collapse
 
-const Teaching = (props) => {
-  useEffect(() => {
-    const script = document.createElement('script')
+const CardContainer = styled.div`
+  display: grid;
+  grid-gap: 3rem;
+  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+  margin: 2rem auto;
+  padding: 0 1rem;
+  max-width: 70rem;
+  width: 100vw;
+`
 
-    script.src = 'https://js.stripe.com/v3'
+const Teaching = props => {
+  useEffect(() => {
+    const script = document.createElement("script")
+
+    script.src = "https://js.stripe.com/v3"
     script.async = true
 
     document.body.appendChild(script)
@@ -27,13 +48,16 @@ const Teaching = (props) => {
 
   const pageQuery = queryString.parse(props.location.search)
 
-  if (pageQuery.stripe && pageQuery.stripe === 'success') {
-    Modal.success({ title: 'Purchase Complete', content: 'Thanks, you will receive an email confirmation shortly!' })
-    navigate('/teaching')
+  if (pageQuery.stripe && pageQuery.stripe === "success") {
+    Modal.success({
+      title: "Purchase Complete",
+      content: "Thanks, you will receive an email confirmation shortly!",
+    })
+    navigate("/teaching")
   }
-  if (pageQuery.stripe && pageQuery.stripe === 'cancel') {
-    message.warning('Purchase canceled')
-    navigate('/teaching')
+  if (pageQuery.stripe && pageQuery.stripe === "cancel") {
+    message.warning("Purchase canceled")
+    navigate("/teaching")
   }
 
   const [teachingDrawerOpen, setTeachingDrawerOpen] = useState(false)
@@ -43,19 +67,20 @@ const Teaching = (props) => {
 
   const onCheckout = () => {
     setCheckoutLoading(true)
-    const stripe = Stripe('pk_live_MUiJenwf3RE3gr8hqovEMTji00Y4bfbTAu')
+    const stripe = Stripe("pk_live_MUiJenwf3RE3gr8hqovEMTji00Y4bfbTAu")
 
-    stripe.redirectToCheckout({
-      items: [{ sku: 'sku_GzBcYDWUtwAGXt', quantity }],
-      shippingAddressCollection: {
-        allowedCountries: countries
-      },
-      successUrl: 'https://emmastephensonmusic.com/teaching?stripe=success',
-      cancelUrl: 'https://emmastephensonmusic.com/teaching?stripe=cancel'
-    })
+    stripe
+      .redirectToCheckout({
+        items: [{ sku: "sku_GzBcYDWUtwAGXt", quantity }],
+        shippingAddressCollection: {
+          allowedCountries: countries,
+        },
+        successUrl: "https://emmastephensonmusic.com/teaching?stripe=success",
+        cancelUrl: "https://emmastephensonmusic.com/teaching?stripe=cancel",
+      })
       .then(function (result) {
         if (result.error) {
-          var displayError = document.getElementById('error-message')
+          var displayError = document.getElementById("error-message")
           displayError.textContent = result.error.message
         }
       })
@@ -179,16 +204,6 @@ const Teaching = (props) => {
     }
   `)
 
-  const CardContainer = styled.div`
-    display: grid;
-    grid-gap: 3rem;
-   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-    margin: 2rem auto;
-   padding: 0 1rem;
-    max-width: 70rem;
-    width: 100vw;
-  `
-
   const teachingDocs = data.teachingDetails.edges.sort(
     (a, b) => a.node.frontmatter.order - b.node.frontmatter.order
   )
@@ -200,7 +215,7 @@ const Teaching = (props) => {
         <Container>
           <h1>Teaching</h1>
 
-          <Carousel dots autoplay style={{ width: '100%' }}>
+          <Carousel dots autoplay style={{ width: "100%" }}>
             <Img fluid={data.teaching1.childImageSharp.fluid} />
 
             <Img fluid={data.teaching2.childImageSharp.fluid} />
@@ -213,6 +228,24 @@ const Teaching = (props) => {
 
         <CardContainer>
           <Card
+            hoverable
+            actions={[
+              <Button
+                type='link'
+                key='youtube'
+                onClick={() => setTeachingDrawerOpen(true)}
+              >
+                More Info
+              </Button>,
+            ]}
+            cover={<Img fluid={data.teaching6.childImageSharp.fluid} />}
+          >
+            <Meta
+              title='Lessons'
+              description='Thanks for considering me as you or your child’s piano teacher. If we work together, I promise to attend to you or your child’s musical development with compassion, joy and patience. As my previous six day teaching schedule in New York City would suggest, I truly love to teach and have a bounty of experience with students of all ages, levels and interests to draw upon.'
+            />
+          </Card>
+          <Card
             actions={[
               <Button
                 type='link'
@@ -220,7 +253,7 @@ const Teaching = (props) => {
                 href='https://www.youtube.com/channel/UCJcrv99z4efX0kV0nkCOsnQ?view_as=subscriber'
               >
                 Check it Out!
-              </Button>
+              </Button>,
             ]}
             hoverable
             cover={<Img fluid={data.pianoWithMissEmma.childImageSharp.fluid} />}
@@ -230,9 +263,7 @@ const Teaching = (props) => {
               description="Help young kids learn piano effortlessly. Instructional videos for adults to facilitate a play-based kid's piano method (appropriate for children 3.5- 8 years old). No experience required (For the adults or the children!) "
             />
           </Card>
-
           <Card
-            // onClick={() => setStarterKitDrawerOpen(true)}
             hoverable
             actions={[
               <Button
@@ -241,9 +272,8 @@ const Teaching = (props) => {
                 onClick={() => setStarterKitDrawerOpen(true)}
               >
                 More Info
-              </Button>
+              </Button>,
             ]}
-            // actions={[<a key='youtube' href='https://www.youtube.com/channel/UCJcrv99z4efX0kV0nkCOsnQ?view_as=subscriber'>Check it Out!</a>]}
             cover={<Img fluid={data.kit1Square.childImageSharp.fluid} />}
           >
             <Meta
@@ -251,34 +281,13 @@ const Teaching = (props) => {
               description='Purchase the $30 starter kit which can be used in conjunction with instructional videos provided on the youtube channel Piano With Miss Emma.'
             />
           </Card>
-
-          <Card
-            // onClick={() => setTeachingDrawerOpen(true)}
-            hoverable
-            actions={[
-              <Button
-                type='link'
-                key='youtube'
-                onClick={() => setTeachingDrawerOpen(true)}
-              >
-                More Info
-              </Button>
-            ]}
-            cover={<Img fluid={data.teaching6.childImageSharp.fluid} />}
-          >
-            <Meta
-              title='Lessons'
-              description='Thanks for considering me as you or your child’s piano teacher. If we work together, I promise to attend to you or your child’s musical development with compassion, joy and patience. As my previous six day teaching schedule in New York City would suggest, I truly love to teach and have a bounty of experience with students of all ages, levels and interests to draw upon.'
-            />
-          </Card>
-
           <Card
             hoverable
             cover={<Img fluid={data.arrangement.childImageSharp.fluid} />}
             actions={[
               <Button type='link' href='mailto:emmagrace91@gmail.com'>
                 Email Me
-              </Button>
+              </Button>,
             ]}
           >
             <Meta
@@ -314,7 +323,7 @@ const Teaching = (props) => {
 
                   <p>
                     Examples of PDFs can be found in my starter kit booklet.
-                    Examples of youtube videos can be found{' '}
+                    Examples of youtube videos can be found{" "}
                     <a
                       target='blank'
                       href='https://www.youtube.com/channel/UCJcrv99z4efX0kV0nkCOsnQ'
@@ -343,11 +352,17 @@ const Teaching = (props) => {
           <h1>Fees and Policies</h1>
           <div
             dangerouslySetInnerHTML={{
-              __html: data.introduction.edges[0].node.html
+              __html: data.introduction.edges[0].node.html,
             }}
           />
-          <p>Please email me at <a href='mailto:pianowithmissemma@gmail.com'>pianowithmissemma@gmail.com</a> with any questions.</p>
-          <Collapse defaultActiveKey={['Adults and older children']}>
+          <p>
+            Please email me at{" "}
+            <a href='mailto:pianowithmissemma@gmail.com'>
+              pianowithmissemma@gmail.com
+            </a>{" "}
+            with any questions.
+          </p>
+          <Collapse defaultActiveKey={["Adults and older children"]}>
             {teachingDocs.map(e => (
               <Panel
                 header={e.node.frontmatter.title}
@@ -355,7 +370,7 @@ const Teaching = (props) => {
               >
                 <div
                   dangerouslySetInnerHTML={{
-                    __html: e.node.html
+                    __html: e.node.html,
                   }}
                 />
               </Panel>
@@ -374,14 +389,14 @@ const Teaching = (props) => {
 
           <div
             style={{
-              maxWidth: 'min(50rem, 80vw)',
-              margin: '1rem auto',
-              display: 'grid',
-              gridTemplateColumns: '100%',
-              gridGap: '1rem'
+              maxWidth: "min(50rem, 80vw)",
+              margin: "1rem auto",
+              display: "grid",
+              gridTemplateColumns: "100%",
+              gridGap: "1rem",
             }}
           >
-            <Carousel dots autoplay style={{ margin: 'auto' }}>
+            <Carousel dots autoplay style={{ margin: "auto" }}>
               <Img fluid={data.kit1.childImageSharp.fluid} />
               <Img fluid={data.kit2.childImageSharp.fluid} />
               <Img fluid={data.kit3.childImageSharp.fluid} />
@@ -390,7 +405,7 @@ const Teaching = (props) => {
 
           <p>
             Kit can be used in conjunction with instructional videos provided on
-            the youtube channel{' '}
+            the youtube channel{" "}
             <a href='https://www.youtube.com/channel/UCJcrv99z4efX0kV0nkCOsnQ?view_as=subscriber'>
               Piano With Miss Emma.
             </a>
@@ -445,9 +460,9 @@ const Teaching = (props) => {
             />
           </span>
           <Divider />
-          <Statistic title='Price' value={`AUD $${quantity * 30}` + '.00'} />
+          <Statistic title='Price' value={`AUD $${quantity * 30}` + ".00"} />
           <Button
-            style={{ margin: '1rem 0' }}
+            style={{ margin: "1rem 0" }}
             size='large'
             loading={checkoutLoading}
             onClick={() => onCheckout()}
