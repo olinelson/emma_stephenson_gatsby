@@ -78,7 +78,7 @@ const Teaching = props => {
         successUrl: "https://emmastephensonmusic.com/teaching?stripe=success",
         cancelUrl: "https://emmastephensonmusic.com/teaching?stripe=cancel",
       })
-      .then(function (result) {
+      .then(function(result) {
         if (result.error) {
           var displayError = document.getElementById("error-message")
           displayError.textContent = result.error.message
@@ -210,7 +210,7 @@ const Teaching = props => {
 
   return (
     <>
-      <SEO title='Teaching' />
+      <SEO title="Teaching" />
       <Layout>
         <Container>
           <h1>Teaching</h1>
@@ -231,8 +231,8 @@ const Teaching = props => {
             hoverable
             actions={[
               <Button
-                type='link'
-                key='youtube'
+                type="link"
+                key="youtube"
                 onClick={() => setTeachingDrawerOpen(true)}
               >
                 More Info
@@ -241,16 +241,16 @@ const Teaching = props => {
             cover={<Img fluid={data.teaching6.childImageSharp.fluid} />}
           >
             <Meta
-              title='Lessons'
-              description='Thanks for considering me as you or your child’s piano teacher. If we work together, I promise to attend to you or your child’s musical development with compassion, joy and patience. As my previous six day teaching schedule in New York City would suggest, I truly love to teach and have a bounty of experience with students of all ages, levels and interests to draw upon.'
+              title="Lessons"
+              description="Thanks for considering me as you or your child’s piano teacher. If we work together, I promise to attend to you or your child’s musical development with compassion, joy and patience. As my previous six day teaching schedule in New York City would suggest, I truly love to teach and have a bounty of experience with students of all ages, levels and interests to draw upon."
             />
           </Card>
           <Card
             actions={[
               <Button
-                type='link'
-                key='youtube'
-                href='https://www.youtube.com/channel/UCJcrv99z4efX0kV0nkCOsnQ?view_as=subscriber'
+                type="link"
+                key="youtube"
+                href="https://www.youtube.com/channel/UCJcrv99z4efX0kV0nkCOsnQ?view_as=subscriber"
               >
                 Check it Out!
               </Button>,
@@ -259,7 +259,7 @@ const Teaching = props => {
             cover={<Img fluid={data.pianoWithMissEmma.childImageSharp.fluid} />}
           >
             <Meta
-              title='Piano With Miss Emma'
+              title="Piano With Miss Emma"
               description="Help young kids learn piano effortlessly. Instructional videos for adults to facilitate a play-based kid's piano method (appropriate for children 3.5- 8 years old). No experience required (For the adults or the children!) "
             />
           </Card>
@@ -267,8 +267,8 @@ const Teaching = props => {
             hoverable
             actions={[
               <Button
-                type='link'
-                key='stButtonrter'
+                type="link"
+                key="stButtonrter"
                 onClick={() => setStarterKitDrawerOpen(true)}
               >
                 More Info
@@ -277,21 +277,21 @@ const Teaching = props => {
             cover={<Img fluid={data.kit1Square.childImageSharp.fluid} />}
           >
             <Meta
-              title='Starter Kit'
-              description='Purchase the $30 starter kit which can be used in conjunction with instructional videos provided on the youtube channel Piano With Miss Emma.'
+              title="Starter Kit"
+              description="Purchase the $30 starter kit which can be used in conjunction with instructional videos provided on the youtube channel Piano With Miss Emma."
             />
           </Card>
           <Card
             hoverable
             cover={<Img fluid={data.arrangement.childImageSharp.fluid} />}
             actions={[
-              <Button type='link' href='mailto:emmagrace91@gmail.com'>
+              <Button type="link" href="mailto:emmagrace91@gmail.com">
                 Email Me
               </Button>,
             ]}
           >
             <Meta
-              title='Request Arrangement'
+              title="Request Arrangement"
               description={
                 <div>
                   <p>
@@ -325,15 +325,15 @@ const Teaching = props => {
                     Examples of PDFs can be found in my starter kit booklet.
                     Examples of youtube videos can be found{" "}
                     <a
-                      target='blank'
-                      href='https://www.youtube.com/channel/UCJcrv99z4efX0kV0nkCOsnQ'
+                      target="blank"
+                      href="https://www.youtube.com/channel/UCJcrv99z4efX0kV0nkCOsnQ"
                     >
                       here
                     </a>
                   </p>
 
                   <p>
-                    <a href='mailto:emmagrace91@gmail.com'>Email me</a> directly
+                    <a href="mailto:emmagrace91@gmail.com">Email me</a> directly
                     for a sample and/or to make an order.
                   </p>
                 </div>
@@ -345,7 +345,7 @@ const Teaching = props => {
 
       <Drawer
         onClose={() => setTeachingDrawerOpen(false)}
-        width='auto'
+        width="auto"
         visible={teachingDrawerOpen}
       >
         <Container>
@@ -357,7 +357,7 @@ const Teaching = props => {
           />
           <p>
             Please email me at{" "}
-            <a href='mailto:pianowithmissemma@gmail.com'>
+            <a href="mailto:pianowithmissemma@gmail.com">
               pianowithmissemma@gmail.com
             </a>{" "}
             with any questions.
@@ -380,7 +380,7 @@ const Teaching = props => {
       </Drawer>
 
       <Drawer
-        width='auto'
+        width="auto"
         onClose={() => setStarterKitDrawerOpen(false)}
         visible={starterKitDrawerOpen}
       >
@@ -406,7 +406,7 @@ const Teaching = props => {
           <p>
             Kit can be used in conjunction with instructional videos provided on
             the youtube channel{" "}
-            <a href='https://www.youtube.com/channel/UCJcrv99z4efX0kV0nkCOsnQ?view_as=subscriber'>
+            <a href="https://www.youtube.com/channel/UCJcrv99z4efX0kV0nkCOsnQ?view_as=subscriber">
               Piano With Miss Emma.
             </a>
           </p>
@@ -460,10 +460,10 @@ const Teaching = props => {
             />
           </span>
           <Divider />
-          <Statistic title='Price' value={`AUD $${quantity * 30}` + ".00"} />
+          <Statistic title="Price" value={`AUD $${quantity * 30}.00`} />
           <Button
             style={{ margin: "1rem 0" }}
-            size='large'
+            size="large"
             loading={checkoutLoading}
             onClick={() => onCheckout()}
           >

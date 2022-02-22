@@ -3,8 +3,12 @@ title: "Fees"
 order: 5
 ---
 
-Unless otherwise discussed, all post-trial lessons are 45 minutes long at \$70 per lesson.
+Your first lesson is free.
 
-12 week commitment period for 10 lessons paid for in advance
+30 minutes - \$55
 
-\*Please note that I am very happy to negotiate more flexible options over the summer to accommodate for festivities, holidays etc. We can negotiate this on a case-by-case basis and find a solution that works for us both.\*
+45 minutes - \$82.20
+
+60 minutes - \$110
+
+[Book a lesson](https://squareup.com/appointments/book/pxouq96fa924br/L9QVNVC6ZQF5Y/start)
