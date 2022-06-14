@@ -65,32 +65,41 @@ function Contact() {
               <Input />
             </Form.Item>
 
-            <Form.Item label="Email address" name="email">
-              <Input
-                htmlType="email"
-                rules={[
-                  {
-                    required: true,
-                    message: "Please provide your email address",
-                  },
-                ]}
-              />
+            <Form.Item
+              label="Email address"
+              name="email"
+              rules={[
+                {
+                  required: true,
+                  message: "Please provide your email address",
+                },
+              ]}
+            >
+              <Input />
             </Form.Item>
 
-            <Form.Item label="Phone number" name="phone">
-              <Input
-                rules={[
-                  {
-                    required: true,
-                    message: "Please provide your phone number",
-                  },
-                ]}
-              />
+            <Form.Item
+              label="Phone number"
+              name="phone"
+              rules={[
+                {
+                  required: true,
+                  message: "Please provide your phone number",
+                },
+              ]}
+            >
+              <Input />
             </Form.Item>
 
             <Form.Item
               label="What type of lesson are you interested in?"
               name="type"
+              rules={[
+                {
+                  required: true,
+                  message: "Please choose a type of lesson",
+                },
+              ]}
             >
               <Radio.Group>
                 <Radio value="Piano">Piano</Radio>
